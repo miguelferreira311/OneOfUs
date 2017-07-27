@@ -6,24 +6,23 @@
 <hibernate-mapping>
 
 
+    <class name="org.academiadecodigo.bootcamp.model.KeyWord" table="keywords">
+
+        <id name="id" column="id" type="int">
+            <generator class="identity"/>
+        </id>
+        <property name="word" column="word" type="string"/>
+
+    </class>
+
     <class name="org.academiadecodigo.bootcamp.model.Answer" table="answers">
 
         <id name="id" column="id" type="int">
             <generator class="identity"/>
         </id>
-        <property name="name" column="name" type="string"/>
-
-    </class>
-
-    <class name="org.academiadecodigo.bootcamp.many2one.Car" table="car">
-
-        <id name="id" column="id" type="int">
-            <generator class="identity"/>
-        </id>
-        <property name="name" column="name" type="string"/>
-
-        <many-to-one class="org.academiadecodigo.bootcamp.many2one.Owner" name="owner" column="owner_id"
-                     unique="true" not-null="true" cascade="all"/>
+        <property name="sentence" column="sentence" type="string"/>
+        <many-to-one class="org.academiadecodigo.bootcamp.model.KeyWord" name="keyWordId" column="keyword_id"
+                     not-null="true" cascade="all"/>
 
     </class>
 </hibernate-mapping>
