@@ -23,6 +23,10 @@ public class ServiceInjections {
 
     }
 
+    public void load(){
+
+    }
+
     public void stop(){
         HibernateSessionManager.close();
     }

@@ -1,35 +1,41 @@
 package org.academiadecodigo.bootcamp;
 
+import javafx.animation.FadeTransition;
+        import javafx.application.Application;
+        import javafx.beans.value.ChangeListener;
+        import javafx.beans.value.ObservableValue;
+        import javafx.event.ActionEvent;
+        import javafx.event.EventHandler;
+        import javafx.geometry.Pos;
+        import javafx.geometry.Rectangle2D;
+        import javafx.scene.Scene;
+        import javafx.scene.control.Label;
+        import javafx.scene.control.ProgressBar;
+        import javafx.scene.effect.DropShadow;
+        import javafx.scene.image.Image;
+        import javafx.scene.image.ImageView;
+        import javafx.scene.layout.Pane;
+        import javafx.scene.layout.VBox;
+        import javafx.scene.web.WebView;
+        import javafx.stage.Screen;
+        import javafx.stage.Stage;
+        import javafx.stage.StageStyle;
+        import javafx.util.Duration;
+        import org.w3c.dom.Document;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+public class Test extends Application {
 
-public class Main extends Application {
-
-    private ServiceInjections servicesInjections;
     private Pane splashLayout;
     private ProgressBar loadProgress;
     private Label progressText;
+    private WebView webView;
     private Stage mainStage;
     private static final int SPLASH_WIDTH = 676;
     private static final int SPLASH_HEIGHT = 227;
 
-    @Override
-    public void init(){
+    public static void main(String[] args) throws Exception { launch(args); }
+
+    @Override public void init() {
         ImageView splash = new ImageView(new Image("http://fxexperience.com/wp-content/uploads/2010/06/logo.png"));
         loadProgress = new ProgressBar();
         loadProgress.setPrefWidth(SPLASH_WIDTH - 20);
@@ -40,33 +46,12 @@ public class Main extends Application {
         splashLayout.setStyle("-fx-padding: 5; -fx-background-color: cornsilk; -fx-border-width:5; -fx-border-color: linear-gradient(to bottom, chocolate, derive(chocolate, 50%));");
         splashLayout.setEffect(new DropShadow());
 
-        servicesInjections = new ServiceInjections();
-        servicesInjections.start();
-
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        primaryStage.setResizable(false);
-        primaryStage.setTitle("OneOfUs");
-
-        showSplash(primaryStage);
-
-
-
-        Navigation.getInstance().setStage(primaryStage);
-        Navigation.getInstance().loadScreen("QuestionView");
+    @Override public void start(final Stage initStage) throws Exception {
+        showSplash(initStage);
     }
 
-    @Override
-    public void stop(){
-        servicesInjections.stop();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     private void showSplash(Stage initStage) {
         Scene splashScene = new Scene(splashLayout);
@@ -77,6 +62,4 @@ public class Main extends Application {
         initStage.setY(bounds.getMinY() + bounds.getHeight() / 2 - SPLASH_HEIGHT / 2);
         initStage.show();
     }
-
 }
-

@@ -39,7 +39,7 @@ public class QuestionController implements Controller {
     @FXML
     void sendPress(ActionEvent event) {
 
-        if (textArea.getText().isEmpty()){
+        if (textArea.getText().isEmpty() || textArea.getText().matches(" ")){
             errLabel.setText("Campo vazio!");
             return;
         }
