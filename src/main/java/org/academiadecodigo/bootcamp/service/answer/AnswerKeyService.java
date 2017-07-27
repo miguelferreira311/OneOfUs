@@ -49,7 +49,7 @@ public class AnswerKeyService implements Service{
             }
 
             if (keyWord == null) {
-                //return default;
+                return answerDao.findById(Random.MathRandom(0, 10));
             }
 
 
