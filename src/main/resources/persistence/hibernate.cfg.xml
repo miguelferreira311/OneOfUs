@@ -24,5 +24,7 @@
     <!-- Show generated SQL for debug purposes-->
     <property name="hibernate.show_sql">true</property>
 
+    <mapping resource="persistence/mapping/answer.hbm.xml"/>
+
   </session-factory>
 </hibernate-configuration>

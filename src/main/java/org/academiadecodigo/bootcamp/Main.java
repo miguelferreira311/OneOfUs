@@ -20,16 +20,41 @@ import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
+    private static final int SPLASH_WIDTH = 676;
+    private static final int SPLASH_HEIGHT = 227;
     private ServiceInjections servicesInjections;
     private Pane splashLayout;
     private ProgressBar loadProgress;
     private Label progressText;
-    private Stage mainStage;
-    private static final int SPLASH_WIDTH = 676;
-    private static final int SPLASH_HEIGHT = 227;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
-    public void init(){
+    public void init() {
+        servicesInjections = new ServiceInjections();
+        servicesInjections.start();
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
+        primaryStage.setResizable(false);
+        primaryStage.setTitle("OneOfUs");
+
+
+        Navigation.getInstance().setStage(primaryStage);
+        Navigation.getInstance().loadScreen("QuestionView");
+    }
+
+    @Override
+    public void stop() {
+        servicesInjections.stop();
+    }
+
+    private void showSplash(Stage initStage) {
+
         ImageView splash = new ImageView(new Image("http://fxexperience.com/wp-content/uploads/2010/06/logo.png"));
         loadProgress = new ProgressBar();
         loadProgress.setPrefWidth(SPLASH_WIDTH - 20);
@@ -40,35 +65,6 @@ public class Main extends Application {
         splashLayout.setStyle("-fx-padding: 5; -fx-background-color: cornsilk; -fx-border-width:5; -fx-border-color: linear-gradient(to bottom, chocolate, derive(chocolate, 50%));");
         splashLayout.setEffect(new DropShadow());
 
-        servicesInjections = new ServiceInjections();
-        servicesInjections.start();
-
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        primaryStage.setResizable(false);
-        primaryStage.setTitle("OneOfUs");
-
-        showSplash(primaryStage);
-
-
-
-        Navigation.getInstance().setStage(primaryStage);
-        Navigation.getInstance().loadScreen("QuestionView");
-    }
-
-    @Override
-    public void stop(){
-        servicesInjections.stop();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-    private void showSplash(Stage initStage) {
         Scene splashScene = new Scene(splashLayout);
         initStage.initStyle(StageStyle.UNDECORATED);
         final Rectangle2D bounds = Screen.getPrimary().getBounds();
@@ -77,6 +73,5 @@ public class Main extends Application {
         initStage.setY(bounds.getMinY() + bounds.getHeight() / 2 - SPLASH_HEIGHT / 2);
         initStage.show();
     }
-
 }
 

@@ -13,6 +13,7 @@ import org.academiadecodigo.bootcamp.service.ServiceRegistry;
 import org.academiadecodigo.bootcamp.service.answer.AnswerKeyService;
 import org.academiadecodigo.bootcamp.service.answer.AnswerService;
 import org.academiadecodigo.bootcamp.service.answer.KeyWordService;
+import org.hibernate.Hibernate;
 
 public class ServiceInjections {
 
@@ -44,7 +45,7 @@ public class ServiceInjections {
     }
 
     public void load(){
-
+        HibernateSessionManager.getSession();
     }
 
     public void stop(){
