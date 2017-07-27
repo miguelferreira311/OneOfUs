@@ -46,8 +46,8 @@ public class QuestionController implements Controller {
             return;
         }
 
-
-
+        Navigation.getInstance().loadScreen("AnswerView");
+        ((AnswerController) Navigation.getInstance().getController()).initData(answer);
     }
 
     public void initialize(){
