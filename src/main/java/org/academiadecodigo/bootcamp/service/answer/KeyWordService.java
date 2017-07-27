@@ -16,6 +16,12 @@ public class KeyWordService {
     private TransactionManager transactionManager;
 
 
+    public KeyWordService(KeyWordDao keyWordDao, TransactionManager transactionManager) {
+        this.keyWordDao = keyWordDao;
+        this.transactionManager = transactionManager;
+    }
+
+
     public void addAnswer(KeyWord word) {
 
         try {

@@ -15,7 +15,14 @@ public class AnswerService {
     private AnswerDao answerDao;
     private TransactionManager transactionManager;
 
-    public void addAnswer(Answer answer){
+
+    public AnswerService(AnswerDao answerDao, TransactionManager transactionManager) {
+        this.answerDao = answerDao;
+        this.transactionManager = transactionManager;
+    }
+
+
+    public void addAnswer(Answer answer) {
 
         try {
 
@@ -38,7 +45,7 @@ public class AnswerService {
     }
 
 
-    public void removeAnswer(Answer answer){
+    public void removeAnswer(Answer answer) {
 
         try {
 
@@ -61,7 +68,7 @@ public class AnswerService {
 
     }
 
-    public List<Answer> findAll(){
+    public List<Answer> findAll() {
 
         try {
 
