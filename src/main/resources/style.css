@@ -1,0 +1,41 @@
+.root {
+    -fx-background-color: white;
+}
+
+.split-pane *.split-pane-divider {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-shape: " ";
+}
+
+.button {
+    -fx-border-radius: 0;
+    -fx-background-color: #E31D1A ;
+    -fx-text-fill: #FFFFFF ;
+    -fx-font-weight: bold;
+    -fx-pref-width: 120;
+    -fx-pref-height: 40;
+}
+
+.label{
+    -fx-text-fill: black;
+}
+
+.hyperlink{
+    -fx-text-fill: black;
+}
+
+.label-custom{
+    -fx-text-fill: black;
+}
+
+.back-btn {
+    -fx-background-color: black;
+    
+}
+
+.menu, .menu-item, .context-menu {
+    -fx-text-fill: white;
+    -fx-background-color: #ff3c2d ;
+}

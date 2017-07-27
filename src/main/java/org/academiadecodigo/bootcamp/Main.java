@@ -15,7 +15,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        Navigation.getInstance().setStage(primaryStage);
+        Navigation.getInstance().loadScreen("QuestionView");
     }
 
 
