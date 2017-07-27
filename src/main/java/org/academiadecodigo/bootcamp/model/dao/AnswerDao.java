@@ -9,6 +9,5 @@ import java.util.List;
  */
 public interface AnswerDao extends Dao<Answer> {
 
-
     public List<Answer> findByKeyId (Integer keyId);
 }
