@@ -65,6 +65,8 @@ public abstract class HibernateDao<T> implements Dao<T> {
 
     }
 
+    
+
     @Override
     public long count() {
         try {

@@ -1,7 +1,6 @@
 package org.academiadecodigo.bootcamp.model.dao.hibernate;
 
 import org.academiadecodigo.bootcamp.model.Answer;
-import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;

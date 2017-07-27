@@ -21,6 +21,8 @@
             <generator class="identity"/>
         </id>
         <property name="sentence" column="sentence" type="string"/>
+        <property name="soundFile" column="sound_file" type="string"/>
+
         <many-to-one class="org.academiadecodigo.bootcamp.model.KeyWord" name="keyWordId" column="keyword_id"
                      not-null="true" cascade="all"/>
 
