@@ -4,6 +4,8 @@ import org.academiadecodigo.bootcamp.model.Answer;
 import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
 import org.academiadecodigo.bootcamp.model.dao.KeyWordDao;
+import org.academiadecodigo.bootcamp.persistence.TransactionException;
+import org.academiadecodigo.bootcamp.persistence.TransactionManager;
 import org.academiadecodigo.bootcamp.utils.Random;
 
 import java.util.ArrayList;
@@ -16,38 +18,53 @@ public class AnswerKeyService {
 
     private KeyWordDao keyDao;
     private AnswerDao answerDao;
+    private TransactionManager manager;
 
-    public AnswerKeyService(KeyWordDao keyDao, AnswerDao answerDao) {
+    public AnswerKeyService(KeyWordDao keyDao, AnswerDao answerDao, TransactionManager manager) {
+        this.manager = manager;
         this.keyDao = keyDao;
         this.answerDao = answerDao;
     }
 
-    public String getAnswer(String question) {
+    public Answer getAnswer(String question) {
+
+        try {
 
 
-        String[] words = question.split("[ ,.?!'\";:\\-+*/()$£@\n\r]");
+            manager.beginTransaction();
 
-        KeyWord keyWord = null;
-        List<KeyWord> keyWords = new ArrayList<>();
+            String[] words = question.split("[ ,.?!'\";:\\-+*/()$£@\n\r]");
 
-        for (String word : words) {
+            KeyWord keyWord = null;
+            List<KeyWord> keyWords = new ArrayList<>();
 
-            keyWord = keyDao.findByWord(word);
+            for (String word : words) {
 
-            if (keyWord != null) {
-                keyWords.add(keyWord);
+                keyWord = keyDao.findByWord(word);
+
+                if (keyWord != null) {
+                    keyWords.add(keyWord);
+                }
             }
+
+            if (keyWord == null) {
+                //return default;
+            }
+
+
+            keyWord = keyWords.get(Random.MathRandom(0, keyWords.size()));
+            List<Answer> answers = answerDao.findByKeyId(keyWord.getId());
+            Answer answer = answers.get(Random.MathRandom(0, answers.size()));
+
+            manager.commitTransaction();
+
+            return answer;
+
+        }catch (TransactionException ex){
+            manager.rollbackTransaction();
+            System.err.println("Error: " + ex.getMessage());
         }
 
-        if (keyWord == null) {
-            //return default;
-        }
-
-
-        keyWord = keyWords.get(Random.MathRandom(0, keyWords.size()));
-        List<Answer> answers = answerDao.findByKeyId(keyWord.getId());
-        String answer = answers.get(Random.MathRandom(0, answers.size())).getSentence();
-
-        return answer;
+        return null;
     }
 }
