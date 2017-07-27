@@ -14,7 +14,7 @@ public interface Dao<T> {
 
     T findById(int id);
 
-    List<T> findAll(long min, long max);
+    List<T> findAll();
 
     long count();
 

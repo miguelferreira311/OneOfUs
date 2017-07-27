@@ -21,26 +21,38 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
         super(KeyWord.class);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public KeyWord findByWord(String name) {
-
-
-        return null;
-    }
-
-    @Override
-    public List<KeyWord> findAll(long min, long max) {
+    public KeyWord findByWord(String word) {
 
         try {
             Session session = HibernateSessionManager.getSession();
 
-            Query query = session.createQuery("from " + KeyWord);
-            objects = query.list();
+            List<KeyWord> list = session.createCriteria(KeyWord.class)
+                    .add(Restrictions.eq("word", word)).list();
 
+            return list != null ? list.get(0) : null;
 
-        }catch (HibernateException ex){
+        } catch (HibernateException ex) {
             throw new TransactionException(ex);
         }
-        return null;
+
+    }
+
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<KeyWord> findAll() {
+
+        try {
+            Session session = HibernateSessionManager.getSession();
+
+            Query query = session.createQuery("from keywords");
+
+            return query.list();
+
+        } catch (HibernateException ex) {
+            throw new TransactionException(ex);
+        }
     }
 }

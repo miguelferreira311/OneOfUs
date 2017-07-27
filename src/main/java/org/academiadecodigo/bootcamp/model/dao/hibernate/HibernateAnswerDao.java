@@ -1,7 +1,14 @@
 package org.academiadecodigo.bootcamp.model.dao.hibernate;
 
 import org.academiadecodigo.bootcamp.model.Answer;
+import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
+import org.academiadecodigo.bootcamp.persistence.TransactionException;
+import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
@@ -14,20 +21,36 @@ public class HibernateAnswerDao extends HibernateDao<Answer> implements AnswerDa
         super(Answer.class);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Answer findByName(String name) {
+    public List<Answer> findByKeyId(Integer keyId) {
 
+        try {
+            Session session = HibernateSessionManager.getSession();
 
-        return null;
+            List<Answer> list = session.createCriteria(Answer.class)
+                    .add(Restrictions.eq("keyword_id", keyId)).list();
+
+            return list;
+
+        } catch (HibernateException ex) {
+            throw new TransactionException(ex);
+        }
+
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public Answer findByKeyId(Integer keyId) {
-        return null;
-    }
+    public List<Answer> findAll() {
+        try {
+            Session session = HibernateSessionManager.getSession();
 
-    @Override
-    public List<Answer> findAll(long min, long max) {
-        return null;
+            Query query = session.createQuery("from answers");
+
+            return query.list();
+
+        }catch (HibernateException ex){
+            throw new TransactionException(ex);
+        }
     }
 }

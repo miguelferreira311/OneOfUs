@@ -9,5 +9,5 @@ public interface KeyWordDao extends Dao<KeyWord> {
 
 
 
-    public KeyWord findByWord(String name);
+    public KeyWord findByWord(String word);
 }
