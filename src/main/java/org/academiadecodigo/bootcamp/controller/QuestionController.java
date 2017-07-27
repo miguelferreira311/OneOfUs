@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import org.academiadecodigo.bootcamp.Navigation;
 
 public class QuestionController implements Controller {
 
@@ -18,11 +19,16 @@ public class QuestionController implements Controller {
 
     @FXML
     void backPress(ActionEvent event) {
-
+        //Navigation.getInstance().back();
     }
 
     @FXML
     void sendPress(ActionEvent event) {
+
+        if (textArea.getText().isEmpty()){
+
+            return;
+        }
 
     }
 
