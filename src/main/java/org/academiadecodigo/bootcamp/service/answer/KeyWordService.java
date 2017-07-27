@@ -4,13 +4,14 @@ import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.dao.KeyWordDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.TransactionManager;
+import org.academiadecodigo.bootcamp.service.Service;
 
 import java.util.List;
 
 /**
  * Created by codecadet on 27/07/2017.
  */
-public class KeyWordService {
+public class KeyWordService implements Service{
 
     private KeyWordDao keyWordDao;
     private TransactionManager transactionManager;
@@ -33,7 +34,7 @@ public class KeyWordService {
                 return;
             }
 
-            keyWordDao.add(word);
+            keyWordDao.save(word);
 
             transactionManager.commitTransaction();
 
@@ -94,4 +95,8 @@ public class KeyWordService {
     }
 
 
+    @Override
+    public String getServiceName() {
+        return KeyWordService.class.getSimpleName();
+    }
 }

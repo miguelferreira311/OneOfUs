@@ -8,40 +8,22 @@ public class Answer {
 
     private int id;
     private String sentence;
-    private Integer keyWordId;
+    private KeyWord keyWord;
     private String soundFile;
 
 
     public Answer() {
     }
 
-    public Answer(String sentence, Integer keyWordId) {
+    public Answer(String sentence, KeyWord keyWord) {
         this.sentence = sentence;
-        this.keyWordId = keyWordId;
+        this.keyWord = keyWord;
     }
 
-    public Answer(String sentence, Integer keyWordId, String soundFile) {
+    public Answer(String sentence, KeyWord keyWord, String soundFile) {
         this.sentence = sentence;
-        this.keyWordId = keyWordId;
+        this.keyWord = keyWord;
         this.soundFile = soundFile;
-    }
-
-
-
-    public Integer getKeyWordId() {
-        return keyWordId;
-    }
-
-    public void setKeyWordId(Integer keyWordId) {
-        this.keyWordId = keyWordId;
-    }
-
-    public String getSentence() {
-        return sentence;
-    }
-
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
     }
 
     public int getId() {
@@ -52,6 +34,22 @@ public class Answer {
         this.id = id;
     }
 
+    public String getSentence() {
+        return sentence;
+    }
+
+    public void setSentence(String sentence) {
+        this.sentence = sentence;
+    }
+
+    public KeyWord getKeyWord() {
+        return keyWord;
+    }
+
+    public void setKeyWord(KeyWord keyWordId) {
+        this.keyWord = keyWordId;
+    }
+
     public String getSoundFile() {
         return soundFile;
     }
@@ -60,3 +58,4 @@ public class Answer {
         this.soundFile = soundFile;
     }
 }
+

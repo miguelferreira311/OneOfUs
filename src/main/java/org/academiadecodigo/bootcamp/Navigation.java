@@ -55,7 +55,7 @@ public final class Navigation {
             fxmlLoader = new FXMLLoader(getClass().getResource(VIEW_PATH + "/" + view + ".fxml"));
             Parent root = fxmlLoader.load();
             controller = fxmlLoader.getController();
-            // Create a new scene and add it to the stack
+            // Create a new scene and save it to the stack
             Scene scene = new Scene(root, MIN_WIDTH, MIN_HEIGHT);
             scenes.push(scene);
 

@@ -4,13 +4,14 @@ import org.academiadecodigo.bootcamp.model.Answer;
 import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.TransactionManager;
+import org.academiadecodigo.bootcamp.service.Service;
 
 import java.util.List;
 
 /**
  * Created by codecadet on 27/07/2017.
  */
-public class AnswerService {
+public class AnswerService implements Service{
 
     private AnswerDao answerDao;
     private TransactionManager transactionManager;
@@ -33,7 +34,7 @@ public class AnswerService {
                 return;
             }
 
-            answerDao.add(answer);
+            answerDao.save(answer);
 
             transactionManager.commitTransaction();
 
@@ -89,4 +90,8 @@ public class AnswerService {
     }
 
 
+    @Override
+    public String getServiceName() {
+        return AnswerService.class.getSimpleName();
+    }
 }

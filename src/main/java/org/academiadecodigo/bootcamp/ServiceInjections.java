@@ -29,19 +29,23 @@ public class ServiceInjections {
         serviceRegistry.addService(new AnswerKeyService(keyWordDao,answerDao,transactionManager));
 
         KeyWordService keyWordService = new KeyWordService(keyWordDao,transactionManager);
-        keyWordService.addKeyWord(new KeyWord("hcgvbcg"));
+        KeyWord keyWord = new KeyWord("dasda");
+        keyWordService.addKeyWord(keyWord);
 
         AnswerService answerService = new AnswerService(answerDao,transactionManager);
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", 1));
-        answerService.addAnswer(new Answer("Abraça a mudança!", 1));
-        answerService.addAnswer(new Answer("Come JAVAs com chouriço, que isso passa.", 1));
-        answerService.addAnswer(new Answer("O que quer que tenhas perguntado...a resposta provavelmente é: referência", 1));
-        answerService.addAnswer(new Answer("Uma coisa é uma coisa, outra coisa é outra coisa", 1));
-        answerService.addAnswer(new Answer("", 1));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", 1));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", 1));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", 1));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", 1));
+        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
+        answerService.addAnswer(new Answer("Abraça a mudança!", keyWord));
+        answerService.addAnswer(new Answer("Come JAVAs com chouriço, que isso passa.", keyWord));
+        answerService.addAnswer(new Answer("O que quer que tenhas perguntado...a resposta provavelmente é: referência", keyWord));
+        answerService.addAnswer(new Answer("Uma coisa é uma coisa, outra coisa é outra coisa", keyWord));
+        answerService.addAnswer(new Answer("", keyWord));
+        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
+        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
+        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
+        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
+
+        serviceRegistry.addService(keyWordService);
+        serviceRegistry.addService(answerService);
     }
 
     public void load(){
