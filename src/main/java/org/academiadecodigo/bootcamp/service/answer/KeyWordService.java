@@ -22,7 +22,7 @@ public class KeyWordService {
     }
 
 
-    public void addAnswer(KeyWord word) {
+    public void addKeyWord(KeyWord word) {
 
         try {
 
@@ -47,7 +47,7 @@ public class KeyWordService {
     }
 
 
-    public void removeAnswer(KeyWord word) {
+    public void removeKeyWord(KeyWord word) {
 
         try {
 

@@ -8,24 +8,29 @@ public class Answer {
 
     private int id;
     private String sentence;
-    private KeyWord keyWordId;
+    private Integer keyWordId;
     private String soundFile;
 
 
     public Answer() {
     }
 
-    public Answer(String sentence, KeyWord keyWordId, String soundFile) {
+    public Answer(String sentence, Integer keyWordId) {
+        this.sentence = sentence;
+        this.keyWordId = keyWordId;
+    }
+
+    public Answer(String sentence, Integer keyWordId, String soundFile) {
         this.sentence = sentence;
         this.keyWordId = keyWordId;
         this.soundFile = soundFile;
     }
 
-    public KeyWord getKeyWordId() {
+    public Integer getKeyWordId() {
         return keyWordId;
     }
 
-    public void setKeyWordId(KeyWord keyWordId) {
+    public void setKeyWordId(Integer keyWordId) {
         this.keyWordId = keyWordId;
     }
 
