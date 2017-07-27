@@ -1,5 +1,7 @@
 package org.academiadecodigo.bootcamp.model.dao;
 
+import java.util.List;
+
 /**
  * Created by codecadet on 27/07/2017.
  */
@@ -12,7 +14,9 @@ public interface Dao<T> {
 
     T findById(int id);
 
-    int count();
+    List<T> findAll(long min, long max);
+
+    long count();
 
 
 }

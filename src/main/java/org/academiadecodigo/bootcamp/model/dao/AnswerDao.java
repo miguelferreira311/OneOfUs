@@ -9,5 +9,5 @@ public interface AnswerDao extends Dao<Answer> {
 
     public Answer findByName(String name);
 
-
+    public Answer findByKeyId (Integer keyId);
 }

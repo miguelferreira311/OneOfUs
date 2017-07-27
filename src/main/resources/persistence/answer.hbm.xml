@@ -6,7 +6,7 @@
 <hibernate-mapping>
 
 
-    <class name="org.academiadecodigo.bootcamp.many2one.Owner" table="owner">
+    <class name="org.academiadecodigo.bootcamp.model.Answer" table="answers">
 
         <id name="id" column="id" type="int">
             <generator class="identity"/>
