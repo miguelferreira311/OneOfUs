@@ -6,6 +6,7 @@ import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
 import org.academiadecodigo.bootcamp.model.dao.KeyWordDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.TransactionManager;
+import org.academiadecodigo.bootcamp.service.Service;
 import org.academiadecodigo.bootcamp.utils.Random;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.List;
 /**
  * Created by codecadet on 27/07/2017.
  */
-public class AnswerKeyService {
+public class AnswerKeyService implements Service{
 
     private KeyWordDao keyDao;
     private AnswerDao answerDao;
@@ -66,5 +67,10 @@ public class AnswerKeyService {
         }
 
         return null;
+    }
+
+    @Override
+    public String getServiceName() {
+        return AnswerKeyService.class.getSimpleName();
     }
 }
