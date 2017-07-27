@@ -66,14 +66,14 @@ public abstract class HibernateDao<T> implements Dao<T> {
     }
 
     @Override
-    public int count() {
+    public long count() {
         try {
             Session session = HibernateSessionManager.getSession();
 
             Criteria criteria = session.createCriteria(cls)
                     .setProjection(Projections.rowCount());
 
-            return (int) criteria.uniqueResult();
+            return (long) criteria.uniqueResult();
 
         }catch (HibernateException ex){
             throw new TransactionException(ex);

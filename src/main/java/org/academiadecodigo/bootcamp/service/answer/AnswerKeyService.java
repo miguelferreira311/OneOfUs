@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.service.answer;
 
+import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
 import org.academiadecodigo.bootcamp.model.dao.KeyWordDao;
 
@@ -21,7 +22,11 @@ public class AnswerKeyService {
 
         String[] words = question.split("[ ,.?!'\";:\\-+*/()$£@\n\r]");
 
+        KeyWord keyWord = null;
+
         for (String word : words) {
+
+            keyWord = keyDao.findByWord(word);
 
 
 
