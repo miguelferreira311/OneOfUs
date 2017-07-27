@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Answer;
 
 public class AnswerController implements Controller {
@@ -18,7 +19,7 @@ public class AnswerController implements Controller {
 
     @FXML
     void backPressed(ActionEvent event) {
-
+        Navigation.getInstance().back();
     }
 
     public void initData(Answer answer){

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.QuestionController">
+<VBox  alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.QuestionController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -36,8 +36,10 @@
       <Pane prefHeight="48.0" prefWidth="600.0" />
       <Label fx:id="errLabel" />
       <Pane prefHeight="78.0" prefWidth="600.0" VBox.vgrow="ALWAYS" />
-      <ImageView styleClass="image-logo" fx:id="image" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-      </ImageView>
+      <ImageView fx:id="image" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" styleClass="image-logo">
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin></ImageView>
       <Pane prefHeight="63.0" prefWidth="600.0" styleClass="custom-pane" />
    </children>
 </VBox>

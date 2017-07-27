@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: white;
+    -fx-background-image: url("nuvem.jpg");
 }
 
 .split-pane *.split-pane-divider {
@@ -43,14 +43,13 @@
 }
 
 .custom-pane-top{
-
      -fx-background-color: #CBC7DA;
-     -fx-pref-height: 20;
+     -fx-pref-height: 20px;
 }
 
 .custom-pane{
     -fx-background-color: #41337A;
-    -fx-pref-height: 20;
+    -fx-pref-height: 20px;
 
 }
 
@@ -64,6 +63,9 @@
 }
 
 .image-logo{
+
+    -fx-pref-width: 100px;
+    -fx-pref-height: 100px;
 
 }
 
