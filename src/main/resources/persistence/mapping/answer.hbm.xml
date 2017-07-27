@@ -23,7 +23,7 @@
         <property name="soundFile" column="sound_file" type="string"/>
 
 
-        <many-to-one class="org.academiadecodigo.bootcamp.model.KeyWord" name="getKeyWord" column="keywords_id"
+        <many-to-one class="org.academiadecodigo.bootcamp.model.KeyWord" name="keyWord" column="keywords_id"
                      not-null="true" cascade="all" />
 
     </class>
