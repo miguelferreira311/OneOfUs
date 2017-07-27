@@ -6,6 +6,7 @@ import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -33,8 +34,8 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
         try {
             Session session = HibernateSessionManager.getSession();
 
-            Criteria criteria = session.createCriteria(KeyWord.class)
-
+            Query query = session.createQuery("from " + KeyWord);
+            objects = query.list();
 
 
         }catch (HibernateException ex){
