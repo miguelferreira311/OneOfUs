@@ -7,5 +7,4 @@ public interface UserDao extends Dao<User> {
 
     User findByName(String name);
 
-    void setAdmin(User user);
 }

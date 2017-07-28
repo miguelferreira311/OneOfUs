@@ -29,12 +29,15 @@ public class ServiceInjections {
         serviceRegistry.addService(new AnswerKeyService(keyWordDao, answerDao, transactionManager));
 
         KeyWordService keyWordService = new KeyWordService(keyWordDao, transactionManager);
+
         KeyWord keyWord = new KeyWord("dasda");
         KeyWord keyWord1 = new KeyWord("preguiç");
-        keyWordService.addKeyWord(keyWord);
 
+        keyWordService.addKeyWord(keyWord);
+        keyWordService.addKeyWord(keyWord1);
 
         AnswerService answerService = new AnswerService(answerDao, transactionManager);
+
         answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
         answerService.addAnswer(new Answer("Abraça a mudança!", keyWord));
         answerService.addAnswer(new Answer("Come JAVAs com chouriço, que isso passa.", keyWord));
@@ -47,8 +50,12 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Sabes o que é que era fixe...?", keyWord));
 
         answerService.addAnswer(new Answer("Um programador é um preguiçoso criativo", keyWord1));
+
         serviceRegistry.addService(keyWordService);
         serviceRegistry.addService(answerService);
+
+
+
     }
 
     public void load() {
