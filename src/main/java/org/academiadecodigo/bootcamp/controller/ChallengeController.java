@@ -154,7 +154,7 @@ public class ChallengeController implements Controller {
     private void question7() {
         setRadioButtons(false);
 
-        question.setText("7 - Qual das seguintes opções completa de forma correcta a seguinte frase: Em Java, os construtores...");
+        question.setText("7 - Qual das seguintes opções completa de forma correcta a seguinte frase:\n Em Java, os construtores...");
         a.setText("não podem lançar exceções");
         b.setText("não têm acesso aos atributos da classe base");
         c.setText("não podem alterar os valores dos atributos do objecto a criar");
@@ -165,7 +165,7 @@ public class ChallengeController implements Controller {
     private void question6() {
         setRadioButtons(false);
 
-        question.setText("6 - A definição de uma classe por agregação de objectos de outras classes ou suas colecções designa-se por:");
+        question.setText("6 - A definição de uma classe por agregação de objectos de outras classes \n ou suas colecções designa-se por:");
         a.setText("upcasting");
         b.setText("abstracção");
         c.setText("composição");
@@ -237,8 +237,8 @@ public class ChallengeController implements Controller {
         a.setText("Uma classe pode estender uma única classe");
         b.setText("Uma classe pode estender várias classes");
         c.setText("Uma classe só pode implementar uma única interface");
-        d.setText("Uma classe não pode simultaneamente estender uma classe e implementar uma interface");
-        e.setText("Uma classe não pode simultaneamente estender uma classe e implementar mais do que uma interface");
+        d.setText("Uma classe não pode estender de uma classe e implementar uma interface");
+        e.setText("Uma classe não pode estender de uma classe e implementar múltiplas interface");
     }
 }
 

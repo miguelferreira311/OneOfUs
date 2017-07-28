@@ -27,7 +27,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         primaryStage.setResizable(false);
-        primaryStage.setTitle("OneOfUs");
+        primaryStage.setTitle("GOD Talks");
 
         primaryStage.setWidth(676);
         primaryStage.setHeight(427);
