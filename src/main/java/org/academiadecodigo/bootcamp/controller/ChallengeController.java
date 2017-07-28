@@ -140,6 +140,10 @@ public class ChallengeController implements Controller {
                 default:
                     System.exit(1);
             }
+        }else{
+
+            Navigation.getInstance().loadScreen("loser");
+
         }
     }
 
@@ -205,21 +209,11 @@ public class ChallengeController implements Controller {
 
     public void initialize() {
 
-        addSolutions();
+        question1();
 
     }
 
 
-    private void addSolutions() {
-        solutionsMap.put(1, a);
-        solutionsMap.put(2, b);
-        solutionsMap.put(3, b);
-        solutionsMap.put(4, b);
-        solutionsMap.put(5, b);
-        solutionsMap.put(6, c);
-        solutionsMap.put(7, e);
-
-    }
 
 
     private void question1() {
