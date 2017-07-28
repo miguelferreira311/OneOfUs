@@ -37,13 +37,12 @@ public class MainController implements Controller {
     }
 
     public void quizPress(ActionEvent actionEvent) {
-
-        Navigation.getInstance().loadScreen("QuestionView");
-
+        
     }
 
     public void questionPress(ActionEvent actionEvent) {
 
+        Navigation.getInstance().loadScreen("QuestionView");
 
     }
 }
