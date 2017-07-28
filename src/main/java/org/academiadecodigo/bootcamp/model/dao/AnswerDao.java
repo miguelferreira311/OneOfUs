@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp.model.dao;
 
 import org.academiadecodigo.bootcamp.model.Answer;
+import org.academiadecodigo.bootcamp.model.KeyWord;
 
 import java.util.List;
 
@@ -9,6 +10,6 @@ import java.util.List;
  */
 public interface AnswerDao extends Dao<Answer> {
 
-    public List<Answer> findByKeyId (Integer keyId);
+    public List<Answer> findByKeyId (KeyWord keyId);
 
 }

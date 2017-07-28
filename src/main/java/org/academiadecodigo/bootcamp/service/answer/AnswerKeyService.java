@@ -51,11 +51,14 @@ public class AnswerKeyService implements Service{
             if (keyWord == null) {
                 return answerDao.findById(Random.MathRandom(0, 10));
             }
+            System.out.println("aqui 1");
 
-
-            keyWord = keyWords.get(Random.MathRandom(0, keyWords.size()));
-            List<Answer> answers = answerDao.findByKeyId(keyWord.getId());
-            Answer answer = answers.get(Random.MathRandom(0, answers.size()));
+            keyWord = keyWords.get(Random.MathRandom(0, keyWords.size()-1));
+            System.out.println("outro aqui");
+            List<Answer> answers = answerDao.findByKeyId(keyWord);
+            System.out.println("3ºaqui");
+            Answer answer = answers.get(Random.MathRandom(0, answers.size()-1));
+            System.out.println("cá estamos");
 
             manager.commitTransaction();
 
