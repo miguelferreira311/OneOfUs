@@ -10,6 +10,7 @@
     -fx-background-image: url("caminho-god.jpg");
     -fx-background-repeat: stretch;
     -fx-background-position: center center;
+    -fx-background-size: stretch;
 
 }
 
@@ -96,6 +97,7 @@
     -fx-background-radius: 20 20 20 20;
     -fx-pref-width: 20;
     -fx-pref-height: 20;
+
     
 }
 

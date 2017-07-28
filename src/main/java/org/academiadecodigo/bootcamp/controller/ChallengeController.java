@@ -9,9 +9,6 @@ import org.academiadecodigo.bootcamp.Navigation;
 
 import java.util.Map;
 
-/**
- * Created by codecadet on 28/07/17.
- */
 public class ChallengeController implements Controller {
 
     private int counter = 1;
@@ -68,7 +65,7 @@ public class ChallengeController implements Controller {
 
     @FXML
     void backPress(ActionEvent event) {
-
+        Navigation.getInstance().loadScreen("MainView");
     }
 
     @FXML
@@ -212,9 +209,6 @@ public class ChallengeController implements Controller {
         question1();
 
     }
-
-
-
 
     private void question1() {
         question.setText("1 - Em Java, qual das seguintes frases está correcta?");
