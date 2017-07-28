@@ -115,7 +115,7 @@ public class LoginController implements Controller {
             Navigation.getInstance().loadScreen("MainView");
         } else {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Username or Password Invalid!");
+            errLabel.setText("Nome ou Password invalido!");
             errLabel.setVisible(true);
         }
 
@@ -125,14 +125,14 @@ public class LoginController implements Controller {
 
         if (nameText.getText().isEmpty() || nameText.getText().matches("[ ]")) {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Fill the name fild!");
+            errLabel.setText("Preenche o campo do nome.");
             errLabel.setVisible(true);
             return false;
         }
 
         if (passText.getText().isEmpty() || passText.getText().matches("[ ]")) {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Fill the password fild!");
+            errLabel.setText("Preenche o campo da password.");
             errLabel.setVisible(true);
             return false;
         }
@@ -148,21 +148,21 @@ public class LoginController implements Controller {
 
         if (emailText.getText().isEmpty() || emailText.getText().matches("[ ]")) {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Fill the email fild!");
+            errLabel.setText("Preenche o campo de email.");
             errLabel.setVisible(true);
             return;
         }
 
         if (!emailText.getText().matches(regex)) {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Invalid Email");
+            errLabel.setText("Email invalido");
             errLabel.setVisible(true);
             return;
         }
 
         if (userService.findByName(nameText.getText()) != null) {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Username taken");
+            errLabel.setText("Nome de utilizador um uso.");
             errLabel.setVisible(true);
             return;
         }
