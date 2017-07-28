@@ -164,7 +164,7 @@ public class ChallengeController implements Controller {
     private void question7() {
         setRadioButtons(false);
 
-        question.setText("7 - Qual das seguintes opções completa de forma correcta a seguinte frase:\n Em Java, os construtores...");
+        question.setText("7 - Qual das seguintes opções completa de forma correta a seguinte frase:\n Em Java, os construtores...");
         a.setText("não podem lançar exceções");
         b.setText("não têm acesso aos atributos da classe base");
         c.setText("não podem alterar os valores dos atributos do objecto a criar");
@@ -175,9 +175,9 @@ public class ChallengeController implements Controller {
     private void question6() {
         setRadioButtons(false);
 
-        question.setText("6 - A definição de uma classe por agregação de objectos de outras classes \n ou suas colecções designa-se por:");
+        question.setText("6 - A definição de uma classe por agregação de objetos de outras classes \n ou suas coleções designa-se por:");
         a.setText("upcasting");
-        b.setText("abstracção");
+        b.setText("abstração");
         c.setText("composição");
         d.setText("herança");
         e.setText("extensão");
@@ -187,10 +187,10 @@ public class ChallengeController implements Controller {
         setRadioButtons(false);
 
         question.setText("5 - O padrão de desenho Observer...");
-        a.setText("representa uma operação a ser realizada sobre os elementos de uma estrutura de objectos");
-        b.setText("gerir as dependências de outros objectos relativamente ao estado de um objecto");
-        c.setText("permite abstrair a criação de famílias de objectos para uma aplicação");
-        d.setText("permite tratar famílias de objectos e seus grupos indiscriminadamente");
+        a.setText("representa uma operação a ser realizada sobre os elementos de uma estrutura de objetos");
+        b.setText("gere as dependências de outros objetos relativamente ao estado de um objeto");
+        c.setText("permite abstrair a criação de famílias de objetos para uma aplicação");
+        d.setText("permite tratar famílias de objetos e seus grupos indiscriminadamente");
         e.setText("permite que o comportamento de um objeto mude quando o seu estado muda");
     }
 
@@ -213,7 +213,7 @@ public class ChallengeController implements Controller {
         b.setText("Uma função definida por um caso base e uma chamada a si própria");
         c.setText("Uma função com um número variável de argumentos de entrada");
         d.setText("Uma função que executa uma tarefa iterativamente");
-        e.setText("Nenhuma das anteriores.");
+        e.setText("Nenhuma das anteriores");
     }
 
     private void question2() {

@@ -19,14 +19,14 @@
          </children>
       </HBox>
       <Pane prefHeight="29.0" prefWidth="600.0" />
-      <Label text="Key Word:" />
+      <Label text="Palavra Chave:" />
       <TextField fx:id="keywordText">
          <VBox.margin>
             <Insets left="80.0" right="80.0" />
          </VBox.margin>
       </TextField>
       <Pane prefHeight="29.0" prefWidth="600.0" />
-      <Label text="Answer:" />
+      <Label text="Resposta:" />
       <TextField fx:id="answerText">
          <VBox.margin>
             <Insets left="80.0" right="80.0" />

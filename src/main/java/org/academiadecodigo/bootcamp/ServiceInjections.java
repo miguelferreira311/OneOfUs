@@ -83,7 +83,7 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Um programador é um preguiçoso criativo", keyWord1));
         answerService.addAnswer(new Answer("Encara a tua vida como OOP, fica mais fácil de organizar", keyWord2));
         answerService.addAnswer(new Answer("Deves estar sempre aberto à expansão, mas fechado à modificação", keyWord3));
-        answerService.addAnswer(new Answer("Esse objecto vive numa Heap de certeza...e tem uma referência para ele!", keyWord4));
+        answerService.addAnswer(new Answer("Esse objeto vive numa Heap de certeza...e tem uma referência para ele!", keyWord4));
         answerService.addAnswer(new Answer("[heap, heap]", keyWord5));
         answerService.addAnswer(new Answer("Com NullPointerException não ajudo...desculpa lá", keyWord6));
         answerService.addAnswer(new Answer("O essencial é entender bem o problema, só depois poderás definir o melhor design pattern para o resolver", keyWord7));

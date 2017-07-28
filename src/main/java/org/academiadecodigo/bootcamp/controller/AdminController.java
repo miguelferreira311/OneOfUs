@@ -49,7 +49,7 @@ public class AdminController implements Controller {
 
         if (keywordText.getText().split(" ").length != 1){
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
-            errLabel.setText("Por favor introduza apenas uma word.");
+            errLabel.setText("Por favor introduza apenas uma palavra.");
             errLabel.setVisible(true);
             return;
         }
