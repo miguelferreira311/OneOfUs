@@ -45,7 +45,7 @@ public class HibernateAnswerDao extends HibernateDao<Answer> implements AnswerDa
         try {
             Session session = HibernateSessionManager.getSession();
 
-            Query query = session.createQuery("from answers");
+            Query query = session.createQuery("from Answer");
 
             return query.list();
 
