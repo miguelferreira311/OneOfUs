@@ -8,6 +8,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
@@ -29,7 +30,7 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
             Session session = HibernateSessionManager.getSession();
 
             List<KeyWord> list = session.createCriteria(KeyWord.class)
-                    .add(Restrictions.like("word", word)).list();
+                    .add(Restrictions.like("word", word+"%", MatchMode.ANYWHERE)).list();
 
             return list.size() != 0 ? list.get(0) : null;
 
@@ -38,6 +39,7 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
         }
 
     }
+
 
 
 }

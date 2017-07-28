@@ -2,24 +2,12 @@ package org.academiadecodigo.bootcamp;
 
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Screen;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.academiadecodigo.bootcamp.controller.SplashController;
 
-import javax.print.attribute.standard.MediaSize;
+import java.io.File;
 
 public class Main extends Application {
 
@@ -48,6 +36,11 @@ public class Main extends Application {
         Navigation.getInstance().loadScreen("SplashView");
 
         ((SplashController)Navigation.getInstance().getController()).load();
+
+        String musicFile = "SpaBells.mp3";
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
 
     }
 

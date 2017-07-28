@@ -15,7 +15,10 @@ public class MainController implements Controller {
     private ImageView mainView;
 
     @FXML
-    private Button btnMain;
+    private Button btnMain1;
+
+    @FXML
+    private Button btnMain2;
 
     @FXML
     private Label mainLabel;
@@ -28,17 +31,18 @@ public class MainController implements Controller {
         mainView.setFitHeight(300);
         mainView.setImage(image);
 
+        btnMain1.setMinSize(170, 100);
+        btnMain2.setMinSize(170,100);
+
     }
 
     public void quizPress(ActionEvent actionEvent) {
-
-        Navigation.getInstance().loadScreen("QuestionView");
-
+        
     }
 
     public void questionPress(ActionEvent actionEvent) {
 
-
+        Navigation.getInstance().loadScreen("QuestionView");
 
     }
 }
