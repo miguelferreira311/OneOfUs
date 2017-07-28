@@ -14,7 +14,10 @@
 
 .image-logo-lateral{
 
+}
 
+.btn-main{
+    -fx-background-color: #B21010;
 
 }
 
@@ -81,7 +84,6 @@
 }
 
 .image-logo{
-
     -fx-pref-width: 100px;
     -fx-pref-height: 100px;
 
