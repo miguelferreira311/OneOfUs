@@ -44,6 +44,7 @@ public class LoginController implements Controller {
     private UserService userService;
     private RoleService roleService;
     private boolean isLogin = true;
+    private String regex = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
 
 
     @FXML
@@ -78,6 +79,8 @@ public class LoginController implements Controller {
         clearText();
         emailText.setVisible(false);
         emailLb.setVisible(false);
+        hyper.setText("Register");
+        btn.setText("Login");
     }
 
     private void clearText() {
@@ -92,6 +95,8 @@ public class LoginController implements Controller {
         clearText();
         emailText.setVisible(true);
         emailLb.setVisible(true);
+        hyper.setText("Cancelar");
+        btn.setText("Registar");
     }
 
     private void login() {
@@ -138,6 +143,13 @@ public class LoginController implements Controller {
         if (emailText.getText().isEmpty() || emailText.getText().matches("[ ]")) {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
             errLabel.setText("Fill the email fild!");
+            errLabel.setVisible(true);
+            return;
+        }
+
+        if (!emailText.getText().matches(regex)) {
+            errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));
+            errLabel.setText("Invalid Email");
             errLabel.setVisible(true);
             return;
         }
