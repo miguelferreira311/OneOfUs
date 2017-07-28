@@ -78,6 +78,8 @@ public class LoginController implements Controller {
         clearText();
         emailText.setVisible(false);
         emailLb.setVisible(false);
+        hyper.setText("Register");
+        btn.setText("Login");
     }
 
     private void clearText() {
@@ -92,6 +94,8 @@ public class LoginController implements Controller {
         clearText();
         emailText.setVisible(true);
         emailLb.setVisible(true);
+        hyper.setText("Cancelar");
+        btn.setText("Registar");
     }
 
     private void login() {

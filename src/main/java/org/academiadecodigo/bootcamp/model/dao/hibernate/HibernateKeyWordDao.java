@@ -40,6 +40,4 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
 
     }
 
-
-
 }
