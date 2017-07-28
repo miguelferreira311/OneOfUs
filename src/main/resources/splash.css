@@ -1,7 +1,6 @@
-.root{
 
-}
-
-.image-custom{
-
+.splash-root{
+    -fx-background-image: url("nuvem.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
 }

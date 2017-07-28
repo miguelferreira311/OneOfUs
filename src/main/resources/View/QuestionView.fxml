@@ -21,7 +21,7 @@
          </children>
       </HBox>
       <Pane prefHeight="108.0" prefWidth="600.0" />
-      <Label styleClass="question-label" text="O que você quer saber?">
+      <Label styleClass="question-label" text="Faça a sua pergunta, para uma resposta suprema.">
          <VBox.margin>
             <Insets top="50.0" />
          </VBox.margin></Label>
