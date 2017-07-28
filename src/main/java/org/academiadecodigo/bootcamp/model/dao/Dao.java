@@ -8,7 +8,7 @@ import java.util.List;
 public interface Dao<T> {
 
 
-    void add(T element);
+    void save(T element);
 
     void remove(T element);
 

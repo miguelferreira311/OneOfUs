@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.stage.Screen;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Answer;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
@@ -24,6 +26,9 @@ public class QuestionController implements Controller {
     @FXML
     private Label errLabel;
 
+    @FXML
+    private ImageView image;
+
     private AnswerKeyService answerKeyService;
 
     @FXML
@@ -34,7 +39,7 @@ public class QuestionController implements Controller {
     @FXML
     void sendPress(ActionEvent event) {
 
-        if (textArea.getText().isEmpty()){
+        if (textArea.getText().isEmpty() || textArea.getText().matches(" ")){
             errLabel.setText("Campo vazio!");
             return;
         }
@@ -52,6 +57,9 @@ public class QuestionController implements Controller {
 
     public void initialize(){
         answerKeyService = (AnswerKeyService) ServiceRegistry.getInstance().getService("AnswerKeyService");
+        //Image test = new Image("ball8_logo.png");
+        //image.setImage(test);
+
     }
 
 }

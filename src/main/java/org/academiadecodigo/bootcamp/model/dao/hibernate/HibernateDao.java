@@ -21,12 +21,12 @@ public abstract class HibernateDao<T> implements Dao<T> {
     }
 
     @Override
-    public void add(T element) {
+    public void save(T element) {
 
         try {
             Session session = HibernateSessionManager.getSession();
 
-            session.save(element);
+            session.saveOrUpdate(element);
 
         }catch (HibernateException ex){
             throw new TransactionException(ex);

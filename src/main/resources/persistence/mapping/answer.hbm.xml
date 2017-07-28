@@ -5,7 +5,6 @@
 
 <hibernate-mapping>
 
-
     <class name="org.academiadecodigo.bootcamp.model.KeyWord" table="keywords">
 
         <id name="id" column="id" type="int">
@@ -23,8 +22,9 @@
         <property name="sentence" column="sentence" type="string"/>
         <property name="soundFile" column="sound_file" type="string"/>
 
-        <many-to-one class="org.academiadecodigo.bootcamp.model.KeyWord" name="keyWordId" column="keyword_id"
-                     not-null="true" cascade="all"/>
+
+        <many-to-one class="org.academiadecodigo.bootcamp.model.KeyWord" name="keyWord" column="keywords_id"
+                     not-null="true" cascade="all" />
 
     </class>
 </hibernate-mapping>

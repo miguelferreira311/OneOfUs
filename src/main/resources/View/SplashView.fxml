@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" stylesheets="@/splash.css" maxHeight="676" maxWidth="227" minHeight="676" minWidth="227" prefHeight="676" prefWidth="227" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.SplashController">
+   <children>
+      <ImageView styleClass="image-custom" fx:id="imageView" fitHeight="Infinity" fitWidth="Infinity" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS" />
+      <Label fx:id="label" text="Label" />
+      <Button fx:id="btn" onAction="#startPush" mnemonicParsing="false" text="Button" />
+   </children>
+</VBox>

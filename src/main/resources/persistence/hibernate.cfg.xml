@@ -6,7 +6,7 @@
   <session-factory>
 
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="connection.url">jdbc:mysql://localhost:3306/AppDB</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/oneofus</property>
     <property name="connection.username">root</property>
 
     <!-- JDBC connection pool (use the built in)-->
@@ -23,6 +23,8 @@
 
     <!-- Show generated SQL for debug purposes-->
     <property name="hibernate.show_sql">true</property>
+
+    <mapping resource="persistence/mapping/answer.hbm.xml"/>
 
   </session-factory>
 </hibernate-configuration>

@@ -29,9 +29,9 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
             Session session = HibernateSessionManager.getSession();
 
             List<KeyWord> list = session.createCriteria(KeyWord.class)
-                    .add(Restrictions.eq("word", word)).list();
+                    .add(Restrictions.like("word", word)).list();
 
-            return list != null ? list.get(0) : null;
+            return list.size() != 0 ? list.get(0) : null;
 
         } catch (HibernateException ex) {
             throw new TransactionException(ex);
@@ -47,7 +47,7 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
         try {
             Session session = HibernateSessionManager.getSession();
 
-            Query query = session.createQuery("from keywords");
+            Query query = null ;//= session.createQuery("from keywords");
 
             return query.list();
 
