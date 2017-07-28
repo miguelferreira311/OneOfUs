@@ -47,6 +47,8 @@ public class Main extends Application {
         Navigation.getInstance().setStage(primaryStage);
         Navigation.getInstance().loadScreen("SplashView");
 
+        ((SplashController)Navigation.getInstance().getController()).load();
+
     }
 
     @Override

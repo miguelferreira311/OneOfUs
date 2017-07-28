@@ -47,7 +47,7 @@ public class QuestionController implements Controller {
         Answer answer = answerKeyService.getAnswer(textArea.getText());
 
         if (answer == null){
-            errLabel.setText("Ocurreu um erro!");
+            errLabel.setText("Ocorreu um erro!");
             return;
         }
 

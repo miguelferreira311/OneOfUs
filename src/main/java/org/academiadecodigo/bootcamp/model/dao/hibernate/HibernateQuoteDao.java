@@ -2,6 +2,7 @@ package org.academiadecodigo.bootcamp.model.dao.hibernate;
 
 import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.Quote;
+import org.academiadecodigo.bootcamp.model.dao.QuoteDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
 import org.hibernate.HibernateException;
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * Created by codecadet on 27/07/17.
  */
-public class HibernateQuoteDao extends HibernateDao<Quote> {
+public class HibernateQuoteDao extends HibernateDao<Quote> implements QuoteDao{
 
 
     public HibernateQuoteDao() {
