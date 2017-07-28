@@ -25,27 +25,27 @@
             <Insets bottom="15.0" />
          </VBox.margin>
       </Label>
-      <RadioButton fx:id="a" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#aClicked" prefHeight="18.0" prefWidth="118.0" text="RadioButton">
+      <RadioButton fx:id="a" contentDisplay="TEXT_ONLY" mnemonicParsing="false" onAction="#aClicked" prefHeight="23.0" prefWidth="500.0" text="RadioButton" wrapText="true">
          <padding>
             <Insets bottom="5.0" />
          </padding>
       </RadioButton>
-      <RadioButton fx:id="b" mnemonicParsing="false" onAction="#bClicked" prefHeight="18.0" prefWidth="118.0" text="RadioButton">
+      <RadioButton fx:id="b" mnemonicParsing="false" onAction="#bClicked" prefHeight="23.0" prefWidth="500.0" text="RadioButton" wrapText="true">
          <padding>
             <Insets bottom="5.0" />
          </padding>
       </RadioButton>
-      <RadioButton fx:id="c" mnemonicParsing="false" onAction="#cClicked" prefHeight="18.0" prefWidth="118.0" text="RadioButton">
+      <RadioButton fx:id="c" mnemonicParsing="false" onAction="#cClicked" prefHeight="23.0" prefWidth="500.0" text="RadioButton" wrapText="true">
          <padding>
             <Insets bottom="5.0" />
          </padding>
       </RadioButton>
-      <RadioButton fx:id="d" mnemonicParsing="false" onAction="#dClicked" prefHeight="18.0" prefWidth="118.0" text="RadioButton">
+      <RadioButton fx:id="d" mnemonicParsing="false" onAction="#dClicked" prefHeight="18.0" prefWidth="500.0" text="RadioButton" wrapText="true">
          <padding>
             <Insets bottom="5.0" />
          </padding>
       </RadioButton>
-      <RadioButton fx:id="e" mnemonicParsing="false" onAction="#eClicked" prefHeight="18.0" prefWidth="119.0" text="RadioButton">
+      <RadioButton fx:id="e" mnemonicParsing="false" onAction="#eClicked" prefHeight="18.0" prefWidth="500.0" text="RadioButton" wrapText="true">
          <padding>
             <Insets bottom="5.0" />
          </padding>
