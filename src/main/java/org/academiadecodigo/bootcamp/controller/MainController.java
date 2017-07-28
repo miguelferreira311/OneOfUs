@@ -7,24 +7,21 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
+import org.academiadecodigo.bootcamp.Navigation;
 
 public class MainController implements Controller {
 
-        @FXML
-        private ImageView mainView;
+    @FXML
+    private ImageView mainView;
 
-        @FXML
-        private Button btnMain;
+    @FXML
+    private Button btnMain;
 
-        @FXML
-        private Label mainLabel;
+    @FXML
+    private Label mainLabel;
 
-        @FXML
-        void btnPress(ActionEvent event) {
 
-        }
-
-    public void initialize(){
+    public void initialize() {
 
         Image image = new Image("banner_main.png");
         mainView.setFitWidth(Screen.getPrimary().getBounds().getWidth());
@@ -33,6 +30,17 @@ public class MainController implements Controller {
 
     }
 
+    public void quizPress(ActionEvent actionEvent) {
+
+        Navigation.getInstance().loadScreen("QuestionView");
+
+    }
+
+    public void questionPress(ActionEvent actionEvent) {
+
+
+
+    }
 }
 
 
