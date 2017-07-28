@@ -5,7 +5,6 @@ import javafx.application.Application;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import org.academiadecodigo.bootcamp.controller.SplashController;
 
 import java.io.File;
 
@@ -35,8 +34,10 @@ public class Main extends Application {
         Navigation.getInstance().setStage(primaryStage);
         Navigation.getInstance().loadScreen("SplashView");
 
-        String musicFile = "SpaBells.mp3";
-        Media sound = new Media(new File(musicFile).toURI().toString());
+       // this.getClass().getClassLoader().getResource("music/SpaBells.mp3");
+
+     //   String musicFile = "music/SpaBells.mp3";
+        Media sound = new Media( this.getClass().getClassLoader().getResource("music/SpaBells.mp3").toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         mediaPlayer.play();

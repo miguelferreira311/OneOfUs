@@ -23,12 +23,12 @@
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <groupId>org.apache.maven.plugins</groupId>
-                <version>3.0.0 </version>
+                <version>3.0.0</version>
 
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.academia.login.Main</mainClass>
+                            <mainClass>org.academiadecodigo.bootcamp.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -73,4 +73,7 @@
             <version>5.1.0.Final</version>
         </dependency>
     </dependencies>
+
+
+
 </project>

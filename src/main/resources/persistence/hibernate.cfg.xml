@@ -19,7 +19,7 @@
     <property name="current_session_context_class">thread</property>
 
     <!-- DB schema will be updated if needed. DO NOT USE IN PRODUCTION -->
-    <property name="hbm2ddl.auto">create</property>
+    <property name="hbm2ddl.auto">update</property>
 
     <!-- Show generated SQL for debug purposes-->
     <property name="hibernate.show_sql">true</property>

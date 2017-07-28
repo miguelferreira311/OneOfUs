@@ -53,52 +53,7 @@ public class ServiceInjections {
     }
 
     public void load() {
-
-        KeyWord keyWord = new KeyWord("dasda");
-        KeyWord keyWord1 = new KeyWord("preguiç");
-        KeyWord keyWord2 = new KeyWord("oop");
-        KeyWord keyWord3 = new KeyWord("abert");
-        KeyWord keyWord4 = new KeyWord("objecto");
-        KeyWord keyWord5 = new KeyWord("heap");
-        KeyWord keyWord6 = new KeyWord("null");
-        KeyWord keyWord7 = new KeyWord("problema");
-        KeyWord keyWord8 = new KeyWord("itera");
-
-        roleService.addRole(new Role("User"));
-        roleService.addRole(new Role("Admin"));
-
-        keyWordService.addKeyWord(keyWord);
-        keyWordService.addKeyWord(keyWord1);
-
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
-        answerService.addAnswer(new Answer("Abraça a mudança!", keyWord));
-        answerService.addAnswer(new Answer("Come JAVAs com chouriço, que isso passa.", keyWord));
-        answerService.addAnswer(new Answer("O que quer que tenhas perguntado...a resposta provavelmente é: referência", keyWord));
-        answerService.addAnswer(new Answer("Uma coisa é uma coisa, outra coisa é outra coisa", keyWord));
-        answerService.addAnswer(new Answer("Se estiveres com dúvidas, desenha uma heap!", keyWord));
-        answerService.addAnswer(new Answer("Não sei se estou a perceber bem a tua pergunta...", keyWord));
-        answerService.addAnswer(new Answer("Importas-te de ser um bocadinho mais específico?", keyWord));
-        answerService.addAnswer(new Answer("Não percebi nada do que disseste!!", keyWord));
-        answerService.addAnswer(new Answer("Sabes o que é que era fixe...?", keyWord));
-        answerService.addAnswer(new Answer("Um programador é um preguiçoso criativo", keyWord1));
-        answerService.addAnswer(new Answer("Encara a tua vida como OOP, fica mais fácil de organizar", keyWord2));
-        answerService.addAnswer(new Answer("Deves estar sempre aberto à expansão, mas fechado à modificação", keyWord3));
-        answerService.addAnswer(new Answer("Esse objeto vive numa Heap de certeza...e tem uma referência para ele!", keyWord4));
-        answerService.addAnswer(new Answer("[heap, heap]", keyWord5));
-        answerService.addAnswer(new Answer("Com NullPointerException não ajudo...desculpa lá", keyWord6));
-        answerService.addAnswer(new Answer("O essencial é entender bem o problema, só depois poderás definir o melhor design pattern para o resolver", keyWord7));
-        answerService.addAnswer(new Answer("A vida é uma iteração só, aproveita-a bem", keyWord8));
-
-
-        quoteService.addQuote(new Quote("\"Falar é fácil. Mostra-me o código.\" - Linus Torvalds"));
-        quoteService.addQuote(new Quote("\"Não te preocupes se não funcionar corretamente.\n Se tudo funcionasse ficarias sem emprego.\""));
-        quoteService.addQuote(new Quote("\"Existem duas maneiras de construir um projeto \n de software. Uma maneira é tornar tão simples \n que, obviamente, não há deficiências. \n E o outro caminho é tornar tão complicado que \n não haja deficiências óbvias. \"- C.A.R. Hoare"));
-        quoteService.addQuote(new Quote("\"A maioria dos bons programadores programa, \n não porque esperam receber pagamento \n ou reconhecimento pelo público, mas porque é divertido programar.\"\n- Linus Torvalds"));
-        quoteService.addQuote(new Quote("\"Iterar é humano, recursar é divino.\"- L. Peter Deutsch"));
-        quoteService.addQuote(new Quote("\"Às vezes vale a pena ficar na cama na segunda-feira, \n ao invés de passar o resto da semana a corrigir\n o código de segunda-feira\" - Christopher Thompson"));
-        quoteService.addQuote(new Quote("\"Em teoria, a teoria e a prática são a mesma coisa. \n Na prática não.\"- Yoggi Berra"));
-
-
+        HibernateSessionManager.getSession();
     }
 
 
