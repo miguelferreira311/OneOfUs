@@ -38,18 +38,4 @@ public class HibernateAnswerDao extends HibernateDao<Answer> implements AnswerDa
 
     }
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Answer> findAll() {
-        try {
-            Session session = HibernateSessionManager.getSession();
-
-            Query query = session.createQuery("from answers");
-
-            return query.list();
-
-        }catch (HibernateException ex){
-            throw new TransactionException(ex);
-        }
-    }
 }

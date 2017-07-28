@@ -40,19 +40,4 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
     }
 
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<KeyWord> findAll() {
-
-        try {
-            Session session = HibernateSessionManager.getSession();
-
-            Query query = null ;//= session.createQuery("from keywords");
-
-            return query.list();
-
-        } catch (HibernateException ex) {
-            throw new TransactionException(ex);
-        }
-    }
 }

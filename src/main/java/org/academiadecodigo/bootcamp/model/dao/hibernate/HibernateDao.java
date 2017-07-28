@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
+import java.util.List;
+
 /**
  * Created by codecadet on 25/07/2017.
  */
@@ -65,7 +67,10 @@ public abstract class HibernateDao<T> implements Dao<T> {
 
     }
 
-    
+    @Override
+    public List<T> findAll() {
+        return null;
+    }
 
     @Override
     public long count() {
