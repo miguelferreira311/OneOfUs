@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.academiadecodigo.bootcamp.controller.Controller;
+import org.academiadecodigo.bootcamp.model.User;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -24,6 +25,7 @@ public final class Navigation {
     private LinkedList<Scene> scenes = new LinkedList<Scene>(); // Navigation History
     private Controller controller;
     private Stage stage; // reference to the application window
+    private User user;
 
     // ... navigation stuff ...
 
@@ -114,6 +116,14 @@ public final class Navigation {
     public void setDefaultSize(){
         stage.setHeight(757);
         stage.setWidth(1077);
+    }
+
+    public void saveUser(User user){
+        this.user = user;
+    }
+
+    public User getUser(){
+        return user;
     }
 
     public Controller getController() {
