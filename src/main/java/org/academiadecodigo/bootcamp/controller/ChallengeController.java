@@ -52,6 +52,7 @@ public class ChallengeController implements Controller {
 
     }
 
+
     @FXML
     void bClicked(ActionEvent event) {
         if (counter == 2 || counter == 3 || counter == 4 || counter == 5) {
@@ -137,20 +138,22 @@ public class ChallengeController implements Controller {
                 default:
                     System.exit(1);
             }
-        }else{
+        } else {
 
-            Navigation.getInstance().loadScreen("loser");
+            Navigation.getInstance().loadScreen("GameOverView");
 
         }
     }
 
     private void victory() {
 
-
+        Navigation.getInstance().loadScreen("CongratsView");
 
     }
 
     private void question7() {
+        setRadioButtons(false);
+
         question.setText("7 - Qual das seguintes opções completa de forma correcta a seguinte frase: Em Java, os construtores...");
         a.setText("não podem lançar exceções");
         b.setText("não têm acesso aos atributos da classe base");
@@ -160,6 +163,8 @@ public class ChallengeController implements Controller {
     }
 
     private void question6() {
+        setRadioButtons(false);
+
         question.setText("6 - A definição de uma classe por agregação de objectos de outras classes ou suas colecções designa-se por:");
         a.setText("upcasting");
         b.setText("abstracção");
@@ -169,6 +174,8 @@ public class ChallengeController implements Controller {
     }
 
     private void question5() {
+        setRadioButtons(false);
+
         question.setText("5 - O padrão de desenho Observer...");
         a.setText("representa uma operação a ser realizada sobre os elementos de uma estrutura de objectos");
         b.setText("gerir as dependências de outros objectos relativamente ao estado de um objecto");
@@ -178,6 +185,8 @@ public class ChallengeController implements Controller {
     }
 
     private void question4() {
+        setRadioButtons(false);
+
         question.setText("4 - Em Java, um método declarado private…");
         a.setText("não pode chamar outros métodos");
         b.setText("não pode ser overridden");
@@ -187,6 +196,8 @@ public class ChallengeController implements Controller {
     }
 
     private void question3() {
+        setRadioButtons(false);
+
         question.setText("3 - Uma função recursiva distingue-se por ser: ");
         a.setText("Uma função com recursos de memória ilimitados");
         b.setText("Uma função definida por um caso base e uma chamada a si própria");
@@ -196,6 +207,7 @@ public class ChallengeController implements Controller {
     }
 
     private void question2() {
+        setRadioButtons(false);
         question.setText("2 - Em Java, uma interface...");
         a.setText("implementa métodos");
         b.setText("tem apenas membros públicos");
@@ -204,13 +216,23 @@ public class ChallengeController implements Controller {
         e.setText("não pode conter classes internas");
     }
 
+    private void setRadioButtons(boolean set) {
+        a.setSelected(set);
+        b.setSelected(set);
+        c.setSelected(set);
+        d.setSelected(set);
+        e.setSelected(set);
+    }
+
     public void initialize() {
 
         question1();
 
     }
 
+
     private void question1() {
+
         question.setText("1 - Em Java, qual das seguintes frases está correcta?");
         a.setText("Uma classe pode estender uma única classe");
         b.setText("Uma classe pode estender várias classes");

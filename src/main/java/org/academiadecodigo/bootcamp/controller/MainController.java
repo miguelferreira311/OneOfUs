@@ -39,6 +39,8 @@ public class MainController implements Controller {
     public void quizPress(ActionEvent actionEvent) {
         Navigation.getInstance().loadScreen("ChallengeView");
 
+        Navigation.getInstance().loadScreen("ChallengeView");
+
     }
 
     public void questionPress(ActionEvent actionEvent) {
