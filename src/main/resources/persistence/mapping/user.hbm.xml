@@ -21,7 +21,7 @@
         </id>
         <property name="name" column="name" type="string"/>
         <property name="password" column="password" type="string"/>
-
+        <property name="email" column="email" type="string"/>
 
         <many-to-one class="org.academiadecodigo.bootcamp.model.Role" name="role" column="roles_id"
                      not-null="true" cascade="all" />

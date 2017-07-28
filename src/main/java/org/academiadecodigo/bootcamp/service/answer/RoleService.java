@@ -21,6 +21,25 @@ public class RoleService implements Service{
         return RoleService.class.getSimpleName();
     }
 
+    public Role findById(int id){
+        try {
+
+            manager.beginTransaction();
+
+            Role role = roleDao.findById(id);
+
+            manager.commitTransaction();
+
+            return role;
+
+        } catch (TransactionException ex) {
+
+            System.out.println(ex.getMessage());
+            manager.rollbackTransaction();
+        }
+        return null;
+    }
+
     public Role findByName(String name){
 
         try {

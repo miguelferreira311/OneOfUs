@@ -35,7 +35,7 @@ public class SplashController implements Controller {
         btn.setDisable(true);
 
         Navigation.getInstance().setDefaultSize();
-        Navigation.getInstance().loadScreen("MainView");
+        Navigation.getInstance().loadScreen("loginView");
 
     }
 

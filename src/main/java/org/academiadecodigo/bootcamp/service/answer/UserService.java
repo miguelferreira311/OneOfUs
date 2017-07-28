@@ -24,7 +24,7 @@ public class UserService implements Service {
         return UserService.class.getSimpleName();
     }
 
-    public User findByName(String name){
+    public User findByName(String name) {
 
         try {
 
@@ -45,7 +45,7 @@ public class UserService implements Service {
         return null;
     }
 
-    public void saveOrUpdateUser(User user){
+    public void saveOrUpdateUser(User user) {
 
         try {
 
@@ -62,7 +62,8 @@ public class UserService implements Service {
         }
     }
 
-    public boolean autenticate(String name, String password){
+
+    public boolean autenticate(String name, String password) {
 
         try {
 
@@ -72,7 +73,11 @@ public class UserService implements Service {
 
             manager.commitTransaction();
 
-            if (user.getPassword().equals(password)){
+            if (user == null) {
+                return false;
+            }
+
+            if (user.getPassword().equals(password)) {
                 return true;
             }
 

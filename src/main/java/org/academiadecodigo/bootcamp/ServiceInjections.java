@@ -3,20 +3,14 @@ package org.academiadecodigo.bootcamp;
 import org.academiadecodigo.bootcamp.model.Answer;
 import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.Quote;
-import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
-import org.academiadecodigo.bootcamp.model.dao.KeyWordDao;
-import org.academiadecodigo.bootcamp.model.dao.QuoteDao;
-import org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateAnswerDao;
-import org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateKeyWordDao;
-import org.academiadecodigo.bootcamp.model.dao.hibernate.HibernateQuoteDao;
+import org.academiadecodigo.bootcamp.model.Role;
+import org.academiadecodigo.bootcamp.model.dao.*;
+import org.academiadecodigo.bootcamp.model.dao.hibernate.*;
 import org.academiadecodigo.bootcamp.persistence.TransactionManager;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateTransactionManager;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
-import org.academiadecodigo.bootcamp.service.answer.AnswerKeyService;
-import org.academiadecodigo.bootcamp.service.answer.AnswerService;
-import org.academiadecodigo.bootcamp.service.answer.KeyWordService;
-import org.academiadecodigo.bootcamp.service.answer.QuoteService;
+import org.academiadecodigo.bootcamp.service.answer.*;
 import org.hibernate.Hibernate;
 
 public class ServiceInjections {
@@ -45,7 +39,14 @@ public class ServiceInjections {
         quoteService = new QuoteService(quoteDao,transactionManager);
         serviceRegistry.addService(quoteService);
 
-
+        UserDao userDao = new HibernateUserDao();
+        RoleDao roleDao = new HibernateRoleDao();
+        UserService userService = new UserService(userDao, roleDao, transactionManager);
+        RoleService roleService = new RoleService(roleDao,transactionManager);
+        roleService.addRole(new Role("User"));
+        roleService.addRole(new Role("Admin"));
+        serviceRegistry.addService(userService);
+        serviceRegistry.addService(roleService);
     }
 
     public void load() {
