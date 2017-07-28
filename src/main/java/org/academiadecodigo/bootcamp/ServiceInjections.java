@@ -43,8 +43,9 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Se estiveres com dúvidas, desenha uma heap!", keyWord));
         answerService.addAnswer(new Answer("Não sei se estou a perceber bem a tua pergunta...", keyWord));
         answerService.addAnswer(new Answer("Importas-te de ser um bocadinho mais específico?", keyWord));
-        answerService.addAnswer(new Answer("", keyWord));
+        answerService.addAnswer(new Answer("Não percebi nada do que disseste!!", keyWord));
         answerService.addAnswer(new Answer("Sabes o que é que era fixe...?", keyWord));
+
         answerService.addAnswer(new Answer("Um programador é um preguiçoso criativo", keyWord1));
         serviceRegistry.addService(keyWordService);
         serviceRegistry.addService(answerService);
