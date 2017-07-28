@@ -10,11 +10,16 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.ServiceInjections;
+import org.academiadecodigo.bootcamp.model.Quote;
+import org.academiadecodigo.bootcamp.service.ServiceRegistry;
+import org.academiadecodigo.bootcamp.service.answer.AnswerKeyService;
+import org.academiadecodigo.bootcamp.service.answer.QuoteService;
 
 
 public class SplashController implements Controller {
 
     private ServiceInjections servicesInjections;
+    private QuoteService quoteService;
 
     @FXML
     public ImageView imageView;
@@ -28,21 +33,29 @@ public class SplashController implements Controller {
 
     public void startPush(ActionEvent event) {
         btn.setDisable(true);
-        servicesInjections = new ServiceInjections();
-        servicesInjections.start();
+
         Navigation.getInstance().setDefaultSize();
-        Navigation.getInstance().loadScreen("QuestionView");
+        Navigation.getInstance().loadScreen("MainView");
 
     }
 
     public void initialize(){
 
+
+        servicesInjections = new ServiceInjections();
+        servicesInjections.start();
         Image image = new Image("ball8_logo.png");
         imageView.setImage(image);
-        label.setText("Cenas");
         imageView.setFitWidth(500);
         imageView.setFitHeight(350);
     }
 
 
+    public void load(){
+        servicesInjections.load();
+        quoteService = (QuoteService) ServiceRegistry.getInstance().getService("QuoteService");
+        System.out.println(quoteService);
+        label.setText(quoteService.findQuote().getSentence());
+
+    }
 }

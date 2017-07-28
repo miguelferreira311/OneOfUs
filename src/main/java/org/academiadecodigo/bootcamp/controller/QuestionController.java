@@ -33,7 +33,7 @@ public class QuestionController implements Controller {
 
     @FXML
     void backPress(ActionEvent event) {
-        //Navigation.getInstance().back();
+        Navigation.getInstance().back();
     }
 
     @FXML
@@ -47,7 +47,7 @@ public class QuestionController implements Controller {
         Answer answer = answerKeyService.getAnswer(textArea.getText());
 
         if (answer == null){
-            errLabel.setText("Ocurreu um erro!");
+            errLabel.setText("Ocorreu um erro!");
             return;
         }
 
@@ -57,8 +57,7 @@ public class QuestionController implements Controller {
 
     public void initialize(){
         answerKeyService = (AnswerKeyService) ServiceRegistry.getInstance().getService("AnswerKeyService");
-        //Image test = new Image("ball8_logo.png");
-        //image.setImage(test);
+
 
     }
 
