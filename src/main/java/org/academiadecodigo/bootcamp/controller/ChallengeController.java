@@ -1,6 +1,5 @@
 package org.academiadecodigo.bootcamp.controller;
 
-<<<<<<< HEAD
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
