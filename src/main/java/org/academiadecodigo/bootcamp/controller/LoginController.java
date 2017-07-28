@@ -7,12 +7,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.stage.Screen;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Role;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
-import org.academiadecodigo.bootcamp.service.answer.RoleService;
-import org.academiadecodigo.bootcamp.service.answer.UserService;
+import org.academiadecodigo.bootcamp.service.imple.RoleService;
+import org.academiadecodigo.bootcamp.service.imple.UserService;
 import org.academiadecodigo.bootcamp.utils.Security;
 
 public class LoginController implements Controller {
@@ -68,8 +69,12 @@ public class LoginController implements Controller {
     }
 
     public void initialize() {
-        Image image = new Image("logo_banner_lateral.png");
+        Image image = new Image("banner_main.png");
+        imageView.setFitWidth(Screen.getPrimary().getBounds().getWidth());
+        imageView.setFitHeight(300);
         imageView.setImage(image);
+
+
         roleService = (RoleService) ServiceRegistry.getInstance().getService("RoleService");
         userService = (UserService) ServiceRegistry.getInstance().getService("UserService");
         loginView();
@@ -168,6 +173,9 @@ public class LoginController implements Controller {
         errLabel.setTextFill(Paint.valueOf(Color.GREEN.toString()));
         errLabel.setText("Registo completo");
         errLabel.setVisible(true);
+        emailText.setText("");
+        nameText.setText("");
+        passText.setText("");
     }
 }
 

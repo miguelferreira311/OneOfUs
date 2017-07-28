@@ -1,40 +1,40 @@
-package org.academiadecodigo.bootcamp.service.answer;
+package org.academiadecodigo.bootcamp.service.imple;
 
-import org.academiadecodigo.bootcamp.model.KeyWord;
-import org.academiadecodigo.bootcamp.model.dao.KeyWordDao;
+import org.academiadecodigo.bootcamp.model.Quote;
+import org.academiadecodigo.bootcamp.model.dao.QuoteDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.TransactionManager;
 import org.academiadecodigo.bootcamp.service.Service;
+import org.academiadecodigo.bootcamp.utils.Random;
 
 import java.util.List;
 
 /**
- * Created by codecadet on 27/07/2017.
+ * Created by codecadet on 28/07/17.
  */
-public class KeyWordService implements Service{
+public class QuoteService implements Service {
 
-    private KeyWordDao keyWordDao;
+    private QuoteDao quoteDao;
     private TransactionManager transactionManager;
 
-
-    public KeyWordService(KeyWordDao keyWordDao, TransactionManager transactionManager) {
-        this.keyWordDao = keyWordDao;
+    public QuoteService(QuoteDao quoteDao, TransactionManager transactionManager) {
+        this.quoteDao = quoteDao;
         this.transactionManager = transactionManager;
     }
 
 
-    public void addKeyWord(KeyWord word) {
+    public void addQuote(Quote quote) {
 
         try {
 
             transactionManager.beginTransaction();
 
-            if (keyWordDao.findByWord(word.getWord()) != null) {
+            if (quoteDao.findById(quote.getId()) != null) {
                 transactionManager.commitTransaction();
                 return;
             }
 
-            keyWordDao.save(word);
+            quoteDao.save(quote);
 
             transactionManager.commitTransaction();
 
@@ -43,23 +43,16 @@ public class KeyWordService implements Service{
             System.out.println(ex.getMessage());
             transactionManager.rollbackTransaction();
         }
-
-
     }
 
+    public Quote findQuote() {
 
-    public void removeKeyWord(KeyWord word) {
+        Quote quote = null;
 
         try {
-
             transactionManager.beginTransaction();
 
-            if (keyWordDao.findByWord(word.getWord()) == null) {
-                transactionManager.commitTransaction();
-                return;
-            }
-
-            keyWordDao.remove(word);
+            quote = quoteDao.findById(Random.MathRandom(1, 7));
 
             transactionManager.commitTransaction();
 
@@ -68,18 +61,39 @@ public class KeyWordService implements Service{
             System.out.println(ex.getMessage());
             transactionManager.rollbackTransaction();
         }
-
+        return quote;
     }
 
 
-    public List<KeyWord> findAll() {
-
+    public void removeQuote(Quote quote) {
 
         try {
 
             transactionManager.beginTransaction();
 
-            List<KeyWord> list = keyWordDao.findAll();
+            if (quoteDao.findById(quote.getId()) == null) {
+                transactionManager.commitTransaction();
+                return;
+            }
+
+            quoteDao.remove(quote);
+
+            transactionManager.commitTransaction();
+
+        } catch (TransactionException ex) {
+
+            System.out.println(ex.getMessage());
+            transactionManager.rollbackTransaction();
+        }
+    }
+
+    public List<Quote> findAll() {
+
+        try {
+
+            transactionManager.beginTransaction();
+
+            List<Quote> list = quoteDao.findAll();
 
             transactionManager.commitTransaction();
 
@@ -90,13 +104,11 @@ public class KeyWordService implements Service{
             System.out.println(ex.getMessage());
             transactionManager.rollbackTransaction();
         }
-
         return null;
     }
 
-
     @Override
     public String getServiceName() {
-        return KeyWordService.class.getSimpleName();
+        return QuoteService.class.getSimpleName();
     }
 }
