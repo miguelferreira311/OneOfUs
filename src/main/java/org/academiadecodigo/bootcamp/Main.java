@@ -35,8 +35,6 @@ public class Main extends Application {
         Navigation.getInstance().setStage(primaryStage);
         Navigation.getInstance().loadScreen("SplashView");
 
-        //((SplashController)Navigation.getInstance().getController()).load();
-
         String musicFile = "SpaBells.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);

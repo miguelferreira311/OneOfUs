@@ -43,6 +43,8 @@ public class ChallengeController implements Controller {
 
     @FXML
     void aClicked(ActionEvent event) {
+        setRadioButtons(false);
+        a.setSelected(true);
         if (counter == 1) {
             isCorrect = true;
 
@@ -55,6 +57,8 @@ public class ChallengeController implements Controller {
 
     @FXML
     void bClicked(ActionEvent event) {
+        setRadioButtons(false);
+        b.setSelected(true);
         if (counter == 2 || counter == 3 || counter == 4 || counter == 5) {
             isCorrect = true;
 
@@ -71,6 +75,8 @@ public class ChallengeController implements Controller {
 
     @FXML
     void cClicked(ActionEvent event) {
+        setRadioButtons(false);
+        c.setSelected(true);
         if (counter == 6) {
             isCorrect = true;
 
@@ -82,11 +88,15 @@ public class ChallengeController implements Controller {
 
     @FXML
     void dClicked(ActionEvent event) {
+        setRadioButtons(false);
+        d.setSelected(true);
         isCorrect = false;
     }
 
     @FXML
     void eClicked(ActionEvent event) {
+        setRadioButtons(false);
+        e.setSelected(true);
         if (counter == 7) {
             isCorrect = true;
 

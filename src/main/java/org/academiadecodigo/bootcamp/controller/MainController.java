@@ -23,8 +23,21 @@ public class MainController implements Controller {
     @FXML
     private Label mainLabel;
 
+    @FXML
+    private Button butChange;
+
+
+    @FXML
+    void butChangePress(ActionEvent event) {
+
+        Navigation.getInstance().loadScreen("AdminView");
+
+    }
+
 
     public void initialize() {
+
+        butChange.setDisable(true);
 
         Image image = new Image("banner_main.png");
         mainView.setFitWidth(Screen.getPrimary().getBounds().getWidth());
@@ -34,6 +47,11 @@ public class MainController implements Controller {
         btnMain1.setMinSize(170, 100);
         btnMain2.setMinSize(170,100);
 
+        if(Navigation.getInstance().getUser().getRole().getId() == 2){
+            butChange.setText("Admin Space");
+            butChange.setVisible(true);
+            butChange.setDisable(false);
+        }
     }
 
     public void quizPress(ActionEvent actionEvent) {

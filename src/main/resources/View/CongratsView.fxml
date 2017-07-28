@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" styleClass="challenge-custom-congrats" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.CongratsController">
+<VBox styleClass="challenge-custom-over" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.CongratsController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
@@ -21,7 +21,7 @@
          </children>
       </HBox>
       <Pane prefHeight="108.0" prefWidth="600.0" />
-      <Label fx:id="question" styleClass="question-label" text="Felicitações, alcancaste o nível do supremo conhecimento">
+      <Label fx:id="question" styleClass="question-label" >
          <VBox.margin>
             <Insets bottom="15.0" />
          </VBox.margin>
