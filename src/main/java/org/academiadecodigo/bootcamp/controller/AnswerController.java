@@ -9,8 +9,6 @@ import javafx.scene.image.ImageView;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Answer;
 
-
-
 public class AnswerController implements Controller {
 
     @FXML

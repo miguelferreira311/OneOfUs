@@ -5,9 +5,12 @@ import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+
+import java.util.List;
 
 /**
  * Created by codecadet on 25/07/2017.
@@ -65,7 +68,15 @@ public abstract class HibernateDao<T> implements Dao<T> {
 
     }
 
-    
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<T> findAll() {
+        try {
+            return HibernateSessionManager.getSession().createCriteria(cls).list();
+        } catch (HibernateException ex) {
+            throw new TransactionException(ex);
+        }
+    }
 
     @Override
     public long count() {

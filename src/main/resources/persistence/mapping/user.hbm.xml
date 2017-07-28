@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="org.academiadecodigo.bootcamp.model.Role" table="roles">
+
+        <id name="id" column="id" type="int">
+            <generator class="identity"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+
+    </class>
+
+    <class name="org.academiadecodigo.bootcamp.model.User" table="user">
+
+        <id name="id" column="id" type="int">
+            <generator class="identity"/>
+        </id>
+        <property name="name" column="name" type="string"/>
+        <property name="password" column="password" type="string"/>
+        <property name="email" column="email" type="string"/>
+
+        <many-to-one class="org.academiadecodigo.bootcamp.model.Role" name="role" column="roles_id"
+                     not-null="true" cascade="all" />
+
+    </class>
+</hibernate-mapping>

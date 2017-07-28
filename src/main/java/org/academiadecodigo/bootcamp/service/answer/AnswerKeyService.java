@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by codecadet on 27/07/2017.
  */
-public class AnswerKeyService implements Service{
+public class AnswerKeyService implements Service {
 
     private KeyWordDao keyDao;
     private AnswerDao answerDao;
@@ -38,33 +38,35 @@ public class AnswerKeyService implements Service{
 
             KeyWord keyWord = null;
             List<KeyWord> keyWords = new ArrayList<>();
+            List<KeyWord> keyDb = keyDao.findAll();
 
             for (String word : words) {
 
-                keyWord = keyDao.findByWord(word);
+                for (KeyWord key : keyDb) {
 
-                if (keyWord != null) {
-                    keyWords.add(keyWord);
+                    if (word.contains(key.getWord())) {
+                        keyWord = key;
+                    }
+
+                    if (keyWord != null) {
+                        keyWords.add(keyWord);
+                    }
                 }
             }
 
             if (keyWord == null) {
                 return answerDao.findById(Random.MathRandom(0, 10));
             }
-            System.out.println("aqui 1");
 
-            keyWord = keyWords.get(Random.MathRandom(0, keyWords.size()-1));
-            System.out.println("outro aqui");
+            keyWord = keyWords.get(Random.MathRandom(0, keyWords.size() - 1));
             List<Answer> answers = answerDao.findByKeyId(keyWord);
-            System.out.println("3ºaqui");
-            Answer answer = answers.get(Random.MathRandom(0, answers.size()-1));
-            System.out.println("cá estamos");
+            Answer answer = answers.get(Random.MathRandom(0, answers.size() - 1));
 
             manager.commitTransaction();
 
             return answer;
 
-        }catch (TransactionException ex){
+        } catch (TransactionException ex) {
             manager.rollbackTransaction();
             System.err.println("Error: " + ex.getMessage());
         }

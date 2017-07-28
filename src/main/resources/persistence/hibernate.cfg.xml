@@ -25,6 +25,9 @@
     <property name="hibernate.show_sql">true</property>
 
     <mapping resource="persistence/mapping/answer.hbm.xml"/>
+    <mapping resource="persistence/mapping/quotes.hbm.xml"/>
+
+    <mapping resource="persistence/mapping/user.hbm.xml"/>
 
   </session-factory>
 </hibernate-configuration>
