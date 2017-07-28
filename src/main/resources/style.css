@@ -14,6 +14,20 @@
 
 }
 
+.challenge-custom-congrats{
+    -fx-background-image: url("congrats.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-size: stretch;
+}
+
+.challenge-custom-over{
+    -fx-background-image: url("caminho-god.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-size: stretch;
+}
+
 .split-pane *.split-pane-divider {
     -fx-padding: 0;
     -fx-background-color: transparent;
