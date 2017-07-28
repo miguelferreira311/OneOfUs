@@ -38,11 +38,11 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Come JAVAs com chouriço, que isso passa.", keyWord));
         answerService.addAnswer(new Answer("O que quer que tenhas perguntado...a resposta provavelmente é: referência", keyWord));
         answerService.addAnswer(new Answer("Uma coisa é uma coisa, outra coisa é outra coisa", keyWord));
-        answerService.addAnswer(new Answer("", keyWord));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
-        answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
+        answerService.addAnswer(new Answer("Queres ser meu amigo?", keyWord));
+        answerService.addAnswer(new Answer("Não sei se estou a perceber bem a tua pergunta...", keyWord));
+        answerService.addAnswer(new Answer("Importas-te de ser um bocadinho mais específico?", keyWord));
+        answerService.addAnswer(new Answer("Steve Jobs, faz-me um filho", keyWord));
+        answerService.addAnswer(new Answer("Sabes o que é que era fixe...?", keyWord));
 
         serviceRegistry.addService(keyWordService);
         serviceRegistry.addService(answerService);
