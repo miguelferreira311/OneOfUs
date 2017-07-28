@@ -10,17 +10,18 @@ import org.academiadecodigo.bootcamp.persistence.TransactionManager;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateTransactionManager;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
-import org.academiadecodigo.bootcamp.service.answer.*;
-import org.academiadecodigo.bootcamp.service.answer.AnswerKeyService;
-import org.academiadecodigo.bootcamp.service.answer.AnswerService;
-import org.academiadecodigo.bootcamp.service.answer.KeyWordService;
-import org.academiadecodigo.bootcamp.service.answer.QuoteService;
+import org.academiadecodigo.bootcamp.service.imple.*;
+import org.academiadecodigo.bootcamp.service.imple.AnswerKeyService;
+import org.academiadecodigo.bootcamp.service.imple.AnswerService;
+import org.academiadecodigo.bootcamp.service.imple.KeyWordService;
+import org.academiadecodigo.bootcamp.service.imple.QuoteService;
 
 public class ServiceInjections {
 
     private KeyWordService keyWordService;
     private AnswerService answerService;
     private QuoteService quoteService;
+    RoleService roleService;
 
     public void start() {
 
@@ -45,9 +46,8 @@ public class ServiceInjections {
         UserDao userDao = new HibernateUserDao();
         RoleDao roleDao = new HibernateRoleDao();
         UserService userService = new UserService(userDao, roleDao, transactionManager);
-        RoleService roleService = new RoleService(roleDao,transactionManager);
-        roleService.addRole(new Role("User"));
-        roleService.addRole(new Role("Admin"));
+        roleService = new RoleService(roleDao,transactionManager);
+
         serviceRegistry.addService(userService);
         serviceRegistry.addService(roleService);
     }
@@ -64,7 +64,8 @@ public class ServiceInjections {
         KeyWord keyWord7 = new KeyWord("problema");
         KeyWord keyWord8 = new KeyWord("itera");
 
-
+        roleService.addRole(new Role("User"));
+        roleService.addRole(new Role("Admin"));
 
         keyWordService.addKeyWord(keyWord);
         keyWordService.addKeyWord(keyWord1);
@@ -87,7 +88,6 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Com NullPointerException não ajudo...desculpa lá", keyWord6));
         answerService.addAnswer(new Answer("O essencial é entender bem o problema, só depois poderás definir o melhor design pattern para o resolver", keyWord7));
         answerService.addAnswer(new Answer("A vida é uma iteração só, aproveita-a bem", keyWord8));
-
 
 
         quoteService.addQuote(new Quote("\"Falar é fácil. Mostra-me o código.\" - Linus Torvalds"));

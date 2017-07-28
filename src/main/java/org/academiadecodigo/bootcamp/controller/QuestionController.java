@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 import org.academiadecodigo.bootcamp.Navigation;
 import org.academiadecodigo.bootcamp.model.Answer;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
-import org.academiadecodigo.bootcamp.service.answer.AnswerKeyService;
+import org.academiadecodigo.bootcamp.service.imple.AnswerKeyService;
 
 public class QuestionController implements Controller {
 

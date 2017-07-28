@@ -16,7 +16,6 @@
        <Pane prefHeight="70.0" prefWidth="600.0" HBox.hgrow="ALWAYS" />
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
 
-
          <children>
 
             <Button fx:id="btnMain1" alignment="CENTER" mnemonicParsing="false" onAction="#questionPress" styleClass="btn-main" text="Inspira-te em GOD" />

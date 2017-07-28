@@ -37,7 +37,7 @@ public class MainController implements Controller {
     }
 
     public void quizPress(ActionEvent actionEvent) {
-        
+
     }
 
     public void questionPress(ActionEvent actionEvent) {
