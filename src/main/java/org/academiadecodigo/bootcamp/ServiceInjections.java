@@ -17,7 +17,6 @@ import org.academiadecodigo.bootcamp.service.answer.AnswerKeyService;
 import org.academiadecodigo.bootcamp.service.answer.AnswerService;
 import org.academiadecodigo.bootcamp.service.answer.KeyWordService;
 import org.academiadecodigo.bootcamp.service.answer.QuoteService;
-import org.hibernate.Hibernate;
 
 public class ServiceInjections {
 
@@ -52,6 +51,16 @@ public class ServiceInjections {
 
         KeyWord keyWord = new KeyWord("dasda");
         KeyWord keyWord1 = new KeyWord("preguiç");
+        KeyWord keyWord2 = new KeyWord("oop");
+        KeyWord keyWord3 = new KeyWord("abert");
+        KeyWord keyWord4 = new KeyWord("objecto");
+        KeyWord keyWord5 = new KeyWord("heap");
+        KeyWord keyWord6 = new KeyWord("null");
+        KeyWord keyWord7 = new KeyWord("problema");
+        KeyWord keyWord8 = new KeyWord("itera");
+
+
+
         keyWordService.addKeyWord(keyWord);
         keyWordService.addKeyWord(keyWord1);
         answerService.addAnswer(new Answer("Isso são pormenores de implementação.", keyWord));
@@ -65,6 +74,14 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Não percebi nada do que disseste!!", keyWord));
         answerService.addAnswer(new Answer("Sabes o que é que era fixe...?", keyWord));
         answerService.addAnswer(new Answer("Um programador é um preguiçoso criativo", keyWord1));
+        answerService.addAnswer(new Answer("Encara a tua vida como OOP, fica mais fácil de organizar", keyWord2));
+        answerService.addAnswer(new Answer("Deves estar sempre aberto à expansão, mas fechado à modificação", keyWord3));
+        answerService.addAnswer(new Answer("Esse objecto vive numa Heap de certeza...e tem uma referência para ele!", keyWord4));
+        answerService.addAnswer(new Answer("[heap, heap]", keyWord5));
+        answerService.addAnswer(new Answer("Com NullPointerException não ajudo...desculpa lá", keyWord6));
+        answerService.addAnswer(new Answer("O essencial é entender bem o problema, só depois poderás definir o melhor design pattern para o resolver", keyWord7));
+        answerService.addAnswer(new Answer("A vida é uma iteração só, aproveita-a bem", keyWord8));
+
 
         quoteService.addQuote(new Quote("\"Falar é fácil. Mostra-me o código.\" - Linus Torvalds"));
         quoteService.addQuote(new Quote("\"Não te preocupes se não funcionar corretamente. Se tudo funcionasse ficarias sem emprego.\""));
