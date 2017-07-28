@@ -1,8 +1,7 @@
 .root {
     -fx-background-image: url("nuvem.jpg");
-    -fx-background-repeat: stretch;  
-
-       -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
 
 }
 
@@ -11,6 +10,12 @@
     -fx-background-color: transparent;
     -fx-background-insets: 0;
     -fx-shape: " ";
+}
+
+.image-logo-lateral{
+
+
+
 }
 
 .question-root{
