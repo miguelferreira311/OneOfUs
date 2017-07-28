@@ -17,6 +17,12 @@
 
 }
 
+.btn-main{
+    -fx-background-color: #B21010 ;
+    -fx-fit-to-width: 100;
+
+}
+
 .banner-main{
 
 
