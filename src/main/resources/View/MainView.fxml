@@ -11,7 +11,7 @@
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.bootcamp.controller.MainController">
    <children>
       <ImageView fx:id="mainView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="banner-main" />
-      <Pane prefHeight="56.0" prefWidth="600.0" />
+      <Pane prefHeight="50.0" prefWidth="600.0" />
       <Label styleClass="question-label" fx:id="mainLabel" text="Escolha o seu caminho" />
        <Pane prefHeight="70.0" prefWidth="600.0" HBox.hgrow="ALWAYS" />
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">

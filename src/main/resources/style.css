@@ -5,6 +5,14 @@
 
 }
 
+.challenge-custom{
+
+    -fx-background-image: url("caminho-god.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+
+}
+
 .split-pane *.split-pane-divider {
     -fx-padding: 0;
     -fx-background-color: transparent;
@@ -14,6 +22,10 @@
 
 .image-logo-lateral{
 
+}
+
+.banner-main{
+    -fx-start-margin: 10;
 }
 
 
@@ -56,6 +68,8 @@
     -fx-stroke-width: 1;                                                         
 
 }
+
+
 
 .hyperlink{
     -fx-text-fill: black;
