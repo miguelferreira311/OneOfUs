@@ -31,7 +31,7 @@ public class SplashController implements Controller {
         servicesInjections = new ServiceInjections();
         servicesInjections.start();
         Navigation.getInstance().setDefaultSize();
-        Navigation.getInstance().loadScreen("QuestionView");
+        Navigation.getInstance().loadScreen("MainView");
 
     }
 
