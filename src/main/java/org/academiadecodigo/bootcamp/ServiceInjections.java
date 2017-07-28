@@ -21,6 +21,7 @@ public class ServiceInjections {
     private KeyWordService keyWordService;
     private AnswerService answerService;
     private QuoteService quoteService;
+    RoleService roleService;
 
     public void start() {
 
@@ -45,9 +46,8 @@ public class ServiceInjections {
         UserDao userDao = new HibernateUserDao();
         RoleDao roleDao = new HibernateRoleDao();
         UserService userService = new UserService(userDao, roleDao, transactionManager);
-        RoleService roleService = new RoleService(roleDao,transactionManager);
-        roleService.addRole(new Role("User"));
-        roleService.addRole(new Role("Admin"));
+        roleService = new RoleService(roleDao,transactionManager);
+
         serviceRegistry.addService(userService);
         serviceRegistry.addService(roleService);
     }
@@ -64,7 +64,8 @@ public class ServiceInjections {
         KeyWord keyWord7 = new KeyWord("problema");
         KeyWord keyWord8 = new KeyWord("itera");
 
-
+        roleService.addRole(new Role("User"));
+        roleService.addRole(new Role("Admin"));
 
         keyWordService.addKeyWord(keyWord);
         keyWordService.addKeyWord(keyWord1);
