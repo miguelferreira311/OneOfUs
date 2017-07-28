@@ -45,7 +45,6 @@ public class MainController implements Controller {
     public void questionPress(ActionEvent actionEvent) {
 
 
-
     }
 }
 
