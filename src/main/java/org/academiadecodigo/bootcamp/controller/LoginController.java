@@ -111,6 +111,7 @@ public class LoginController implements Controller {
         }
 
         if (userService.autenticate(nameText.getText(), Security.getHash(passText.getText()))) {
+            Navigation.getInstance().saveUser(userService.findByName(nameText.getText()));
             Navigation.getInstance().loadScreen("MainView");
         } else {
             errLabel.setTextFill(Paint.valueOf(Color.RED.toString()));

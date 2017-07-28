@@ -1,5 +1,6 @@
 package org.academiadecodigo.bootcamp.service.imple;
 
+import org.academiadecodigo.bootcamp.model.Role;
 import org.academiadecodigo.bootcamp.model.User;
 import org.academiadecodigo.bootcamp.model.dao.RoleDao;
 import org.academiadecodigo.bootcamp.model.dao.UserDao;
@@ -88,6 +89,27 @@ public class UserService implements Service {
         }
 
         return false;
+    }
+
+    public void makeAdmin (User user){
+        try {
+
+            manager.beginTransaction();
+
+            Role role = roleDao.findById(2);
+
+            user.setRole(role);
+
+            userDao.save(user);
+
+            manager.commitTransaction();
+
+        } catch (TransactionException ex) {
+
+            System.out.println(ex.getMessage());
+            manager.rollbackTransaction();
+        }
+
     }
 
 
