@@ -111,6 +111,11 @@ public final class Navigation {
         return null;
     }
 
+    public void setDefaultSize(){
+        stage.setHeight(757);
+        stage.setWidth(1077);
+    }
+
     public Controller getController() {
         return controller;
     }
