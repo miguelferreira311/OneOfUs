@@ -84,7 +84,7 @@ public class LoginController implements Controller {
         clearText();
         emailText.setVisible(false);
         emailLb.setVisible(false);
-        hyper.setText("Register");
+        hyper.setText("Registar");
         btn.setText("Login");
     }
 
@@ -176,6 +176,9 @@ public class LoginController implements Controller {
         emailText.setText("");
         nameText.setText("");
         passText.setText("");
+
+        loginView();
+        isLogin = true;
     }
 }
 
