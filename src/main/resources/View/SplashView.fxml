@@ -10,7 +10,7 @@
    <children>
       <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
       <Pane prefHeight="75.0" prefWidth="676.0" VBox.vgrow="ALWAYS" />
+      <Label styleClass="splash-label" fx:id="label" text="Label" maxWidth="500"/>
       <ProgressBar fx:id="progressBarr" prefHeight="20.0" prefWidth="677.0" progress="0.0" />
-      <Label fx:id="label" text="Label" />
    </children>
 </VBox>

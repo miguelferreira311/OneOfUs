@@ -68,8 +68,8 @@ public class SplashController implements Controller {
     public void load(){
         servicesInjections.load();
         quoteService = (QuoteService) ServiceRegistry.getInstance().getService("QuoteService");
-        System.out.println(quoteService);
-        label.setText(quoteService.findQuote().getSentence());
+        String string =quoteService.findQuote().getSentence();
+        label.setText(string);
         progressBarr.setProgress(1.0);
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -85,4 +85,6 @@ public class SplashController implements Controller {
 
 
     }
+
+
 }
