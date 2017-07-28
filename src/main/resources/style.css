@@ -1,5 +1,9 @@
 .root {
     -fx-background-image: url("nuvem.jpg");
+    -fx-background-repeat: stretch;  
+
+       -fx-background-position: center center;
+
 }
 
 .split-pane *.split-pane-divider {
@@ -32,6 +36,15 @@
     -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
     -fx-stroke: black;
     -fx-stroke-width: 1;
+}
+
+.answer-label{
+    -fx-text-fill: #3C153B;
+    -fx-font: 20px Tahoma;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);
+    -fx-stroke: black;                                                           
+    -fx-stroke-width: 1;                                                         
+
 }
 
 .hyperlink{
