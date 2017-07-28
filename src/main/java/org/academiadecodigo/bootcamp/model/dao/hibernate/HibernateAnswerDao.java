@@ -1,6 +1,7 @@
 package org.academiadecodigo.bootcamp.model.dao.hibernate;
 
 import org.academiadecodigo.bootcamp.model.Answer;
+import org.academiadecodigo.bootcamp.model.KeyWord;
 import org.academiadecodigo.bootcamp.model.dao.AnswerDao;
 import org.academiadecodigo.bootcamp.persistence.TransactionException;
 import org.academiadecodigo.bootcamp.persistence.hibernate.HibernateSessionManager;
@@ -22,13 +23,13 @@ public class HibernateAnswerDao extends HibernateDao<Answer> implements AnswerDa
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Answer> findByKeyId(Integer keyId) {
+    public List<Answer> findByKeyId(KeyWord key) {
 
         try {
             Session session = HibernateSessionManager.getSession();
 
             List<Answer> list = session.createCriteria(Answer.class)
-                    .add(Restrictions.eq("keyword_id", keyId)).list();
+                    .add(Restrictions.eq("keyWord", key)).list();
 
             return list;
 

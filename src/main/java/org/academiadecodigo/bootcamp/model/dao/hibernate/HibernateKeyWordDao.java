@@ -29,7 +29,7 @@ public class HibernateKeyWordDao extends HibernateDao<KeyWord> implements KeyWor
             Session session = HibernateSessionManager.getSession();
 
             List<KeyWord> list = session.createCriteria(KeyWord.class)
-                    .add(Restrictions.eq("word", word)).list();
+                    .add(Restrictions.like("word", word)).list();
 
             return list.size() != 0 ? list.get(0) : null;
 
