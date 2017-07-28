@@ -64,8 +64,6 @@ public class ServiceInjections {
         KeyWord keyWord7 = new KeyWord("problema");
         KeyWord keyWord8 = new KeyWord("itera");
 
-
-
         keyWordService.addKeyWord(keyWord);
         keyWordService.addKeyWord(keyWord1);
 
@@ -87,7 +85,6 @@ public class ServiceInjections {
         answerService.addAnswer(new Answer("Com NullPointerException não ajudo...desculpa lá", keyWord6));
         answerService.addAnswer(new Answer("O essencial é entender bem o problema, só depois poderás definir o melhor design pattern para o resolver", keyWord7));
         answerService.addAnswer(new Answer("A vida é uma iteração só, aproveita-a bem", keyWord8));
-
 
 
         quoteService.addQuote(new Quote("\"Falar é fácil. Mostra-me o código.\" - Linus Torvalds"));
